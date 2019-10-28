@@ -13,47 +13,45 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
-class GamesController {
+class ProductController {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const games = yield database_1.default.query('select * from games');
-            res.json(games);
+            const products = yield database_1.default.query('select * from productos');
+            res.json(products);
         });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const query = 'INSERT INTO games ' +
-                '(id, title, description, image, create_at) values (' +
-                req.body.id + ', \'' +
-                req.body.title + '\', \'' +
-                req.body.description + '\', \'' +
-                req.body.image + '\', \'' +
-                req.body.create_at + '\')';
+            const query = 'INSERT INTO productos ' +
+                '(codigoProducto, descripcionProducto, stock) values (' +
+                req.body.codigoProducto + ', \'' +
+                req.body.descripcionProducto + '\',' +
+                req.body.stock + ')';
             yield database_1.default.query(query);
-            res.json({ text: 'creating the game ' + req.body.title });
+            res.json({ text: 'creating the product ' + req.body.descripcionProducto });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { id } = req.params;
-            yield database_1.default.query('DELETE FROM games WHERE id = ' + [id]);
-            res.json({ message: "The game was deleted" });
+            const { codigoProducto } = req.params;
+            yield database_1.default.query('DELETE FROM productos WHERE codigoProducto = ' + [codigoProducto]);
+            res.json({ message: "The product was deleted" });
         });
     }
     upDate(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            res.json({ message: "The game was Updated" });
+            res.json({ message: "The product was Updated" });
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const id = req.params.id;
-            console.log(id);
-            const games = yield database_1.default.query('SELECT * FROM games where id = ' + id);
-            console.log(games);
-            return res.json(games);
+            const codigoProducto = req.params.codigoProducto;
+            console.log(codigoProducto);
+            const products = yield database_1.default.query('SELECT * FROM productos where codigoProducto = ' + codigoProducto);
+            console.log(products);
+            return res.json(products);
         });
     }
 }
-const gamesController = new GamesController();
-exports.default = gamesController;
+const productController = new ProductController();
+exports.default = productController;
