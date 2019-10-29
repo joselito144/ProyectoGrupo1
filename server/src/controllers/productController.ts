@@ -2,15 +2,10 @@ import { Request, Response} from 'express';
 
 import pool from '../database';
 
-
-
-
-
-
 class ProductController {
 
     public async list (req: Request, res: Response) {
-        const products = await pool.query('select * from productos')
+        const products = await pool.query('SELECT * FROM productos')
         res.json(products);
     }
 
