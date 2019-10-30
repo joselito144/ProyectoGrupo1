@@ -13,45 +13,46 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
-class ProductController {
+class PurchaseControllers {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const products = yield database_1.default.query('SELECT * FROM productos');
-            res.json(products.recordsets);
+            const purchase = yield database_1.default.query('SELECT * FROM facturas_compras');
+            console.log(purchase.recordsets);
+            res.json(purchase.recordsets);
         });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const query = 'INSERT INTO productos ' +
-                '(codigoProducto, descripcionProducto, stock) values (' +
-                req.body.codigoProducto + ', \'' +
-                req.body.descripcionProducto + '\',' +
-                req.body.stock + ')';
+            const query = 'INSERT INTO facturas_compras ' +
+                '(idFactura, fecha, idProveedor) values (' +
+                req.body.idFactura + ', \'' +
+                req.body.fecha + '\',' +
+                req.body.idProveedor + ')';
             yield database_1.default.query(query);
-            res.json({ text: 'creating the product ' + req.body.descripcionProducto });
+            res.json({ text: 'creating the purchase number ' + req.body.idFactura });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { codigoProducto } = req.params;
-            yield database_1.default.query('DELETE FROM productos WHERE codigoProducto = ' + [codigoProducto]);
-            res.json({ message: "The product was deleted" });
+            const { idFactura } = req.params;
+            yield database_1.default.query('DELETE FROM facturas_compras WHERE idFactura = ' + [idFactura]);
+            res.json({ message: "The purchase was deleted" });
         });
     }
     upDate(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            res.json({ message: "The product was Updated" });
+            res.json({ message: "The purchase was Updated" });
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const codigoProducto = req.params.codigoProducto;
-            console.log(codigoProducto);
-            const products = yield database_1.default.query('SELECT * FROM productos where codigoProducto = ' + codigoProducto);
-            console.log(products);
-            return res.json(products.recordsets);
+            const idFactura = req.params.idFactura;
+            console.log(idFactura);
+            const purchase = yield database_1.default.query('SELECT * FROM facturas_compras where idFactura = ' + idFactura);
+            console.log(purchase.recordsets);
+            return res.json(purchase.recordsets);
         });
     }
 }
-const productController = new ProductController();
-exports.default = productController;
+const purchaseControllers = new PurchaseControllers();
+exports.default = purchaseControllers;

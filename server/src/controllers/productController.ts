@@ -6,7 +6,7 @@ class ProductController {
 
     public async list (req: Request, res: Response) {
         const products = await pool.query('SELECT * FROM productos')
-        res.json(products);
+        res.json(products.recordsets);
     }
 
     public async create(req:Request, res: Response) {
@@ -34,7 +34,7 @@ class ProductController {
         console.log(codigoProducto);
         const products = await pool.query('SELECT * FROM productos where codigoProducto = ' + codigoProducto);
         console.log(products);
-        return res.json(products);
+        return res.json(products.recordsets);
     }
 }
 

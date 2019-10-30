@@ -13,45 +13,45 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const database_1 = __importDefault(require("../database"));
-class ProductController {
+class ClientControllers {
     list(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const products = yield database_1.default.query('SELECT * FROM productos');
-            res.json(products.recordsets);
+            const client = yield database_1.default.query('SELECT * FROM clientes');
+            console.log(client);
+            res.json(client.recordsets);
         });
     }
     create(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const query = 'INSERT INTO productos ' +
-                '(codigoProducto, descripcionProducto, stock) values (' +
-                req.body.codigoProducto + ', \'' +
-                req.body.descripcionProducto + '\',' +
-                req.body.stock + ')';
+            const query = 'INSERT INTO clientes ' +
+                '(idCliente, NombreCliente) values (' +
+                req.body.idCliente + ', \'' +
+                req.body.nombreCliente + '\')';
             yield database_1.default.query(query);
-            res.json({ text: 'creating the product ' + req.body.descripcionProducto });
+            res.json({ text: 'creating the client ' + req.body.nombreCliente });
         });
     }
     delete(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const { codigoProducto } = req.params;
-            yield database_1.default.query('DELETE FROM productos WHERE codigoProducto = ' + [codigoProducto]);
-            res.json({ message: "The product was deleted" });
+            const { idCliente } = req.params;
+            yield database_1.default.query('DELETE FROM clientes WHERE idCliente = ' + [idCliente]);
+            res.json({ message: "The client was deleted" });
         });
     }
     upDate(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            res.json({ message: "The product was Updated" });
+            res.json({ message: "The client was Updated" });
         });
     }
     getOne(req, res) {
         return __awaiter(this, void 0, void 0, function* () {
-            const codigoProducto = req.params.codigoProducto;
-            console.log(codigoProducto);
-            const products = yield database_1.default.query('SELECT * FROM productos where codigoProducto = ' + codigoProducto);
-            console.log(products);
-            return res.json(products.recordsets);
+            const idCliente = req.params.idCliente;
+            console.log(idCliente);
+            const client = yield database_1.default.query('SELECT * FROM clientes where idCliente = ' + idCliente);
+            console.log(client);
+            return res.json(client.recordsets);
         });
     }
 }
-const productController = new ProductController();
-exports.default = productController;
+const clientControllers = new ClientControllers();
+exports.default = clientControllers;
