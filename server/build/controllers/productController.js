@@ -26,6 +26,7 @@ class ProductController {
                 '(codigoProducto, descripcionProducto, stock) values (' +
                 req.body.codigoProducto + ', \'' +
                 req.body.descripcionProducto + '\',' +
+                req.body.unidadMedidad + '\',' +
                 req.body.stock + ')';
             yield database_1.default.query(query);
             res.json({ text: 'creating the product ' + req.body.descripcionProducto });

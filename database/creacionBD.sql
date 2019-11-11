@@ -1,16 +1,14 @@
 -- Creación de tablas
 
-drop table if exists PRODUCTOS;
-drop table if exists COMPRAS;
-drop table if exists VENTAS;
-drop table if exists PROVEEDORES;
-drop table if exists CLIENTES;
-drop table if exists FACTURAS_VENTAS;
-drop table if exists FACTURAS_COMPRAS;
+
+
+
+
 
 create table PRODUCTOS(
 codigoProducto integer,
 descripcionProducto varchar(50) not null,
+unidadMedida varchar(50) not null default 'Unidades',
 stock integer default 0,
 primary key(codigoProducto)
 );
