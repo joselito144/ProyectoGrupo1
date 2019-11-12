@@ -1,1 +1,25 @@
-<p>units-list works!</p>
+<div class="col-md-4" *ngFor = "let unit of units">
+    <div class="card text-center">
+        <div class="card-header bg-dark text-white i-flex justify-content-between">
+            <p style="text-align: left">
+                    <i class="fas fa-map-marker-alt" style="color:red"></i>
+                    {{unit.barrio}}
+                    $ {{unit.valorCanon | number}} <br>
+            </p>
+
+            
+        </div>
+        <img src="https://imganuncios.mitula.net/casa_para_arrendar_marinilla_8300062568379692263.jpg" class="card-img-top">
+        <div class="card-body">
+            <p style="text-align: left">
+                <i class="fas fa-bed"></i>   {{unit.habitaciones}}  |  
+                <i class="fas fa-toilet"></i>   {{unit.banios}}  |  
+                <i class="fas fa-truck-pickup"></i>   {{unit.parqueadero}}<br>
+                Área: {{unit.area}} m<sup>2</sup> - Estrato {{unit.estrato}} <br>
+            </p>
+            <a href="" class="btn btn-info btn-block">
+                Ver Detalles
+            </a>
+        </div>
+    </div>    
+</div>

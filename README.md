@@ -1,5 +1,5 @@
 # ProyectoGrupo1
-Aplicación web para el control de inventario de una tienda de artículos mágicos de Anime
+Aplicación web para buscar casa o apartamentos en arriendo
 
 Desarrollado por :  José Andrés Suárez Espinal
                     Pablo Murcia
