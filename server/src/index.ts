@@ -1,12 +1,8 @@
 import express, { Application } from 'express';
 import morgan from 'morgan';
 import cors from 'cors'
-import productRoutes from './routes/productRoutes';
-import billRoutes from './routes/billRoutes';
-import clientRoutes from './routes/clientRoutes';
-import providerRoutes from './routes/providerRoutes';
-import purchaseRoutes from './routes/purchaseRoutes';
 import leasesRoutes from './routes/leasesRoutes';
+import neighborhoodRoutes from './routes/neighborhoodRoutes';
 
 
 
@@ -29,12 +25,9 @@ class Server {
     }
 
     routes(): void {
-        this.app.use('/products',productRoutes);
-        this.app.use('/bills',billRoutes);
-        this.app.use('/clients', clientRoutes);
-        this.app.use('/providers', providerRoutes);
-        this.app.use('/purchase', purchaseRoutes);
-        this.app.use('/leases', leasesRoutes)
+
+        this.app.use('/leases', leasesRoutes);
+        this.app.use('/neighborhood', neighborhoodRoutes)
     }
 
     start(): void {

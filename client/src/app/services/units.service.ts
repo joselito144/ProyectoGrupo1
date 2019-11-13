@@ -10,8 +10,11 @@ export class UnitsService {
 
   constructor(private http: HttpClient) { }
 
+  getNeighborhoods() {
+    return this.http.get('http://localhost:3000/neighborhood');
+  }
+
   getUnits() {
-    console.log('${API_URI}/leases');
     return this.http.get('http://localhost:3000/leases');
   }
 
