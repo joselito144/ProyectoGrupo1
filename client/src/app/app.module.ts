@@ -8,13 +8,15 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { UnitsListComponent } from './components/units-list/units-list.component';
 import { UnitsFormComponent } from './components/units-form/units-form.component';
 import { UnitsService} from './services/units.service';
+import { DatailsComponent } from './components/datails/datails.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavigationComponent,
     UnitsListComponent,
-    UnitsFormComponent
+    UnitsFormComponent,
+    DatailsComponent
   ],
   imports: [
     BrowserModule,

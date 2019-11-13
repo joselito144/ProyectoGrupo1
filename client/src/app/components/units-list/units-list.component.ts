@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UnitsService} from '../../services/units.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-units-list',
@@ -8,9 +9,11 @@ import { UnitsService} from '../../services/units.service';
 })
 export class UnitsListComponent implements OnInit {
 
+  
   units: any = [];
 
-  constructor(private unitService: UnitsService) { }
+
+  constructor(private unitService: UnitsService, private router: Router) { }
 
   ngOnInit() {
     this.unitService.getUnits().subscribe(
@@ -21,5 +24,12 @@ export class UnitsListComponent implements OnInit {
 
     );
   }
+
+  goToDetails() {
+    console.log('Lo estoy intentando');
+    this.router.navigate(["details"]);
+  }
+
+
 
 }
