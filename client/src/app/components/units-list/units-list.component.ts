@@ -12,7 +12,7 @@ export class UnitsListComponent implements OnInit {
   @HostBinding('class') classes = 'row';
   
   units: any = [];
-
+//
 
   constructor(private unitService: UnitsService) { }
 
