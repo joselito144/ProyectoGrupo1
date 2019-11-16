@@ -10,17 +10,17 @@ import { UnitsService} from '../../services/units.service';
 export class UnitsListComponent implements OnInit {
 
   @HostBinding('class') classes = 'row';
-  
+
   units: any = [];
-//
+  items: any = [];
 
   constructor(private unitService: UnitsService) { }
 
   ngOnInit() {
     this.unitService.getUnits().subscribe(
       res => {
-        console.log(res);
-        this.units = res.Items;
+        this.items = res;
+        this.units = this.items.Items;
       },
       err => console.log(err)
 

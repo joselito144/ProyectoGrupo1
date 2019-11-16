@@ -13,14 +13,7 @@ export class NavigationComponent implements OnInit {
   constructor(private unitService: UnitsService) { }
 
   ngOnInit() {
-    this.unitService.getNeighborhoods().subscribe(
-      res => {
 
-        this.neigs = res[0];
-      },
-      err => console.log(err)
-
-    );
   }
 
 }
