@@ -11,6 +11,7 @@ parqueadero integer not null default 0,
 cuartoUtil integer not null default 0,
 tipoParqueadero varchar(20),
 tipoCocina varchar(20),
+imagenPrincipal varchar (200),
 primary key(id)
 )
 
