@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
+import { UnitsService} from '../../services/units.service'
+import {Unit } from '../../models/Units'
 
 @Component({
   selector: 'app-units-form',
@@ -7,9 +9,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UnitsFormComponent implements OnInit {
 
-  constructor() { }
+  @HostBinding('class') classes = 'row';
+
+  unit: Unit = {
+    id: 0,
+    address: '',
+    neigs: '',
+    strate: null,
+    rooms: null,
+    bathrooms: null,
+    parking: null,
+    canonValue: ''
+  }
+
+  constructor(private unitsService: UnitsService) { }
 
   ngOnInit() {
+  }
+
+  saveNewUnit() {
+    console.log(this.unit);
   }
 
 }

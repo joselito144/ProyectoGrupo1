@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { UnitsService} from '../../services/units.service';
 
 @Component({
   selector: 'app-navigation',
@@ -8,9 +7,9 @@ import { UnitsService} from '../../services/units.service';
 })
 export class NavigationComponent implements OnInit {
 
-  neigs: any = [];
 
-  constructor(private unitService: UnitsService) { }
+
+  constructor() { }
 
   ngOnInit() {
 

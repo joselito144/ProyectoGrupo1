@@ -1,1 +1,51 @@
-<p>units-form works!</p>
+<div class="col-md-4 offset-md-4">
+    <div class="card">
+        <div class="card-body">
+            <form>
+                <div class="form-group">
+                    <textarea name ="address" placeholder="Dirección" [(ngModel)] = "unit.address" autofocus class="form-control"></textarea>
+                </div>
+                <div class = "form-group">
+                    <select name="neigs" class="form-control" [(ngModel)] = "unit.neigs" >
+                        <option value="Aranjuez" class="form-control">Aranjuez</option> 
+                        <option value="Belén" class="form-control">Belén</option> 
+                        <option value="Buenos Aires" class="form-control">Buenos Aires</option> 
+                        <option value="Castilla" class="form-control">Castilla</option> 
+                        <option value="Doce de Octubre" class="form-control">Doce de Octubre</option> 
+                        <option value="El Poblado" class="form-control">El Poblado</option> 
+                        <option value="Estadio" class="form-control">Estadio</option> 
+                        <option value="Guayabal" class="form-control">Guayabal</option> 
+                        <option value="La América" class="form-control">La América</option> 
+                        <option value="La Candelaria" class="form-control">La Candelaria</option> 
+                        <option value="Laureles" class="form-control">Laureles</option> 
+                        <option value="Manrique" class="form-control">Manrique</option> 
+                        <option value="Popular" class="form-control">Popular</option> 
+                        <option value="Robledo" class="form-control">Robledo</option> 
+                        <option value="San Javier" class="form-control">San Javier</option> 
+                        <option value="Santa Cruz" class="form-control">Santa Cruz</option> 
+                        <option value="Villa Hermosa" class="form-control">Villa Hermosa</option>                       
+                    </select>
+                </div>
+                <div class="form-group">
+                    <input type="number" name="strate" [(ngModel)] = "unit.strate" placeholder="Estrato" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="rooms" [(ngModel)] = "unit.rooms" placeholder="Habitaciones" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="bathrooms" [(ngModel)] = "unit.bathrooms" placeholder="Baños" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="number" name="parking" [(ngModel)] = "unit.parking" placeholder="Parqueadero" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="canonValue" [(ngModel)] = "unit.canonValue" placeholder="Valor Arriendo" class="form-control">
+                </div>
+                <button class="btn btn-success btn-block" (click) = "saveNewUnit()">
+                    Guardar
+                </button>
+                
+            </form>
+        </div>
+    </div>
+</div>
