@@ -20,7 +20,7 @@ export class UnitsService {
   }
 
   getUnit(id: string) {
-    return this.http.get('http://localhost:3000/leases/' +  id);
+    return this.http.get('https://itbbqjsso4.execute-api.us-east-2.amazonaws.com/Produccion/' +  id);
   }
 
   saveUnit(unit: Unit) {
