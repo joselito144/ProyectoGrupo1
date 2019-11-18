@@ -3,13 +3,13 @@
         <div class="card-header bg-dark text-white i-flex justify-content-between">
             <p style="text-align: left">
                     <i class="fas fa-map-marker-alt" style="color:red"></i>
-                    {{unit.barrio}}
-                    $ {{unit.valorCanon | number}} <br>
+                    Sector: {{unit.barrio}} <br>
+                    Valor: $ {{unit.valorCanon | number}} <br>
             </p>
 
             
         </div>
-        <a routerLink="/details">
+        <a routerLink="/details/{{unit.id}}">
             <img src="{{unit.fotoPrincipal[0]}}" class="card-img-top">
         </a>
         

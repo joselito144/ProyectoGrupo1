@@ -17,7 +17,7 @@ const routes: Routes = [
     component: UnitsListComponent
   },
   {
-    path: 'details',
+    path: 'details/:id',
     component: DatailsComponent
   },
 

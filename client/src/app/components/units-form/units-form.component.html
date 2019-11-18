@@ -3,10 +3,10 @@
         <div class="card-body">
             <form>
                 <div class="form-group">
-                    <textarea name ="address" placeholder="Dirección" [(ngModel)] = "unit.address" autofocus class="form-control"></textarea>
+                    <textarea name ="address" placeholder="Dirección" [(ngModel)] = "unit.direccion" autofocus class="form-control"></textarea>
                 </div>
                 <div class = "form-group">
-                    <select name="neigs" class="form-control" [(ngModel)] = "unit.neigs" >
+                    <select name="neigs" class="form-control" [(ngModel)] = "unit.barrio" >
                         <option value="Aranjuez" class="form-control">Aranjuez</option> 
                         <option value="Belén" class="form-control">Belén</option> 
                         <option value="Buenos Aires" class="form-control">Buenos Aires</option> 
@@ -27,19 +27,25 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="number" name="strate" [(ngModel)] = "unit.strate" placeholder="Estrato" class="form-control">
+                    <input type="number" name="strate" [(ngModel)] = "unit.estrato" placeholder="Estrato" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="number" name="rooms" [(ngModel)] = "unit.rooms" placeholder="Habitaciones" class="form-control">
+                    <input type="number" name="rooms" [(ngModel)] = "unit.habitaciones" placeholder="Habitaciones" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="number" name="bathrooms" [(ngModel)] = "unit.bathrooms" placeholder="Baños" class="form-control">
+                    <input type="number" name="bathrooms" [(ngModel)] = "unit.banios" placeholder="Baños" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="number" name="parking" [(ngModel)] = "unit.parking" placeholder="Parqueadero" class="form-control">
+                    <input type="number" name="parking" [(ngModel)] = "unit.parqueadero" placeholder="Parqueadero" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="canonValue" [(ngModel)] = "unit.canonValue" placeholder="Valor Arriendo" class="form-control">
+                    <input type="text" name="canonValue" [(ngModel)] = "unit.valorCanon" placeholder="Valor Arriendo" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="text" name="areaValue" [(ngModel)] = "unit.area" placeholder="Área (metros cuadrados)" class="form-control">
+                </div>
+                <div class="form-group">
+                    <input type="url" name="mainPicture" [(ngModel)] = "location" placeholder="Dirección Foto Principal" class="form-control">
                 </div>
                 <button class="btn btn-success btn-block" (click) = "saveNewUnit()">
                     Guardar

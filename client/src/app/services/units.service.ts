@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { HttpHeaders } from '@angular/common/http'
+import { Unit } from '../models/Units';
 
 @Injectable({
   providedIn: 'root'
@@ -23,8 +23,9 @@ export class UnitsService {
     return this.http.get('http://localhost:3000/leases/' +  id);
   }
 
-  saveUnit() {
-
+  saveUnit(unit: Unit) {
+    console.log(unit);
+    return this.http.post('https://itbbqjsso4.execute-api.us-east-2.amazonaws.com/Produccion',unit);
   }
 
   deleteUnit(id: string) {

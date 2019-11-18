@@ -27,7 +27,4 @@ export class UnitsListComponent implements OnInit {
     );
   }
 
-
-
-
 }
