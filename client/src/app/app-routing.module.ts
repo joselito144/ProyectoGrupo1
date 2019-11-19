@@ -25,6 +25,11 @@ const routes: Routes = [
   {
     path: 'units/add',
     component: UnitsFormComponent
+  },
+
+  {
+    path: 'login',
+    component: LoginComponent
   }
 
 ];
