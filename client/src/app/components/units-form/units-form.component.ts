@@ -1,6 +1,6 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { UnitsService} from '../../services/units.service';
-import {Unit } from '../../models/Units';
+import { Unit } from '../../models/Units';
 import { ActivatedRoute, Router } from '@angular/router'
 
 @Component({
@@ -12,15 +12,15 @@ export class UnitsFormComponent implements OnInit {
 
   @HostBinding('class') classes = 'row';
 
-  router: Router;
-  location: string = '';
+
   ts: number;
   randid: number;
   activatedRoute: ActivatedRoute;
 
-
-  unit: Unit = {
+  private counts: number = 1;
+  private unit: Unit = {
     id: this.generateRowId(4),
+    user: '',
     direccion: '',
     barrio: '',
     estrato: null,
@@ -34,15 +34,13 @@ export class UnitsFormComponent implements OnInit {
     fotoPrincipal: [null]
   };
 
-  constructor(private unitsService: UnitsService ) { }
+  constructor(private unitsService: UnitsService, private router: Router ) { }
 
   ngOnInit() {
-    const params = this.activatedRoute.snapshot.params;
-    console.log(params);
+
   }
 
   saveNewUnit() {
-    this.unit.fotoPrincipal[0] = this.location;
     console.log(this.unit);
     this.unitsService.saveUnit(this.unit)
       .subscribe(
@@ -52,6 +50,14 @@ export class UnitsFormComponent implements OnInit {
         },
         err => console.log(err)
       )
+  }
+
+  addImage():void{
+    if(this.counts !== 5) {
+      this.counts = this.counts + 1;
+      console.log(this.counts);
+    }
+
   }
 
   private generateRowId(shardId /* range 0-64 for shard/slot */) {

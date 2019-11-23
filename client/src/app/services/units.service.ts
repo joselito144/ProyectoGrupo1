@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Unit } from '../models/Units';
+import { User } from '../models/users';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class UnitsService {
 
+username: string;
 
   constructor(private http: HttpClient) { 
   }
@@ -26,6 +29,12 @@ export class UnitsService {
   saveUnit(unit: Unit) {
     console.log(unit);
     return this.http.post('https://itbbqjsso4.execute-api.us-east-2.amazonaws.com/Produccion',unit);
+  }
+
+  validateUser(user: User) {
+    console.log(user);
+    this.username = user.username;
+    return this.http.post('http://localhost:3000/users' + this.username, user );
   }
 
   deleteUnit(id: string) {

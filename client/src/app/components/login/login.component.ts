@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  @Output() loggeadoForm: boolean;
+  @Output() userLogged: string;
+
+  constructor(private router: Router) { }
 
   ngOnInit() {
   }
 
+  iniciarSesion(nUser, nPass) {
+    this.loggeadoForm = true;
+    this.userLogged = nUser;
+    this.router.navigate(['/units']);
+  }
 }

@@ -1,5 +1,6 @@
 export interface Unit {
     id: number,
+    user: string,
     direccion: string,
     barrio: string,
     estrato: number,

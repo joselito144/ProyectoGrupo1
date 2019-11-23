@@ -10,15 +10,15 @@
                 </div>
                <form  name="Inicio de Sesión">
                        <div class="form-group">
-                          <label for="exampleInputEmail1">Usuario</label>
-                          <input type="text" name="user"  class="form-control" id="user">
+                          <label>Usuario</label>
+                          <input type="text" name="user"  class="form-control" id="user" #user>
                        </div>
                        <div class="form-group">
-                          <label for="exampleInputEmail1">Contraseña</label>
-                          <input type="password" name="password" id="password"  class="form-control">
+                          <label>Contraseña</label>
+                          <input type="password" name="password" id="nPass"  class="form-control" #password>
                        </div>
                        <div class="col-md-12 text-center ">
-                          <button  (click)="iniciarSesion(nameEmail,nPass)"class="btn btn-block btn-success">Iniciar Sesión </button>
+                          <button  (click)="iniciarSesion(user,password)"class="btn btn-block btn-success">Iniciar Sesión </button>
                        </div>
                     </form>
                   </div>

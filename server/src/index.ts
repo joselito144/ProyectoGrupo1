@@ -3,6 +3,7 @@ import morgan from 'morgan';
 import cors from 'cors'
 import leasesRoutes from './routes/leasesRoutes';
 import neighborhoodRoutes from './routes/neighborhoodRoutes';
+import usersRoutes from './routes/usersRoutes';
 
 
 
@@ -27,7 +28,8 @@ class Server {
     routes(): void {
 
         this.app.use('/leases', leasesRoutes);
-        this.app.use('/neighborhood', neighborhoodRoutes)
+        this.app.use('/neighborhood', neighborhoodRoutes),
+        this.app.use('/users', usersRoutes)
     }
 
     start(): void {
