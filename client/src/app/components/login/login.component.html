@@ -11,15 +11,20 @@
                <form  name="Inicio de Sesión">
                        <div class="form-group">
                           <label>Usuario</label>
-                          <input type="text" name="user"  class="form-control" id="user" #user>
+                          <input type="text" name="user"  [(ngModel)] = "user.username" class="form-control" id="user" #nUser>
                        </div>
                        <div class="form-group">
                           <label>Contraseña</label>
-                          <input type="password" name="password" id="nPass"  class="form-control" #password>
+                          <input type="password" name="password" [(ngModel)] = "user.password" id="nPass"  class="form-control" #nPassword>
                        </div>
                        <div class="col-md-12 text-center ">
-                          <button  (click)="iniciarSesion(user,password)"class="btn btn-block btn-success">Iniciar Sesión </button>
+                          <button  (click)="iniciarSesion(nUser,nPassword)"class="btn btn-block btn-success">Iniciar Sesión </button>
                        </div>
+                       <br>
+                       <div>
+                          <p>{{mensaje}}</p>
+                       </div>
+
                     </form>
                   </div>
             </div>

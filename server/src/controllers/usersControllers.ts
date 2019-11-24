@@ -15,15 +15,15 @@ class UsersControllers {
         const users = await pool.query('SELECT password FROM users where username = \'' + username + "\'");
         console.log(users.rowsAffected[0]);
         if(users.rowsAffected[0] === 0){
-            res.json(false);
+            res.json(0);
         }
         else
         {
             if(req.body.password === users.recordsets[0][0].password) {
-                res.json(true);
+                res.json(1);
             }
             else{
-                res.json(false);
+                res.json(0);
             }
         }
 

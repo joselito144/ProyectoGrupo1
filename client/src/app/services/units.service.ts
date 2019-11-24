@@ -27,14 +27,13 @@ username: string;
   }
 
   saveUnit(unit: Unit) {
-    console.log(unit);
     return this.http.post('https://itbbqjsso4.execute-api.us-east-2.amazonaws.com/Produccion',unit);
   }
 
   validateUser(user: User) {
     console.log(user);
     this.username = user.username;
-    return this.http.post('http://localhost:3000/users' + this.username, user );
+    return this.http.post('http://localhost:3000/users/', user );
   }
 
   deleteUnit(id: string) {

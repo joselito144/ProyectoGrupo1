@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,12 +9,21 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NavigationComponent implements OnInit {
 
-  private logged: boolean = true;
+  private user: string;
 
-  constructor() { }
+  constructor(private router: Router) { 
+    this.user = JSON.parse(localStorage.getItem('user'));
+    if(this.user) {
+      this.router.navigate(['/']);
+    }
+  }
 
   ngOnInit() {
 
+  }
+
+  closeSesion(){
+    localStorage.clear();
   }
 
 }
