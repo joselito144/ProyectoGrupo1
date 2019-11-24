@@ -5,6 +5,7 @@ Desarrollado por :  José Andrés Suárez Espinal
                     Pablo Murcia
                     Jonathan Hincapie
                     Alejandro Salazar
+                    Mr. Nobody
 
 Servidor API REST:  Desarrollado en Nodejs
                     La ejecución se realiza de manera local a través del puerto 3000
