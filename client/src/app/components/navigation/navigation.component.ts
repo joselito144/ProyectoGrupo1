@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router } from '@angular/router';
 
-
+//Browser
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',

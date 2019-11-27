@@ -1,3 +1,4 @@
+//Angular Core 
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -5,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './datails.component.html',
   styleUrls: ['./datails.component.css']
 })
+
+//Entering images in a String[]
 export class DatailsComponent implements OnInit {
 
   images: string []= ['https://d15jm47acbjce0.cloudfront.net/s838x629_1479773199407.JPG',
