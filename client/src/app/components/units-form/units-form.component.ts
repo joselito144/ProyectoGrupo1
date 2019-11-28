@@ -20,7 +20,7 @@ export class UnitsFormComponent implements OnInit {
   private counts: number = 1;
   private unit: Unit = {
     id: this.generateRowId(4),
-    user: '',
+    user: JSON.parse(localStorage.getItem('user')),
     direccion: '',
     barrio: '',
     estrato: null,
