@@ -1,5 +1,8 @@
 //Angular Core 
 import { Component, OnInit } from '@angular/core';
+import { UnitsService } from '../../services/units.service';
+import { Unit } from '../../models/units';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-datails',
@@ -9,15 +12,42 @@ import { Component, OnInit } from '@angular/core';
 
 //Entering images in a String[]
 export class DatailsComponent implements OnInit {
+  private position: number = 0;
+  private images: string[];
+  private items: any;
+  private unit: Unit;
 
-  images: string []= ['https://d15jm47acbjce0.cloudfront.net/s838x629_1479773199407.JPG',
-  'https://www.lamudi.com.co/static/cms/Content/Medellin_apto_arriendo_LAMUDI.jpg',
-  'https://imganuncios.mitula.net/apartaestudio_en_arriendoventa_en_medellin_loma_de_los_gonzalez_1560084547217696150.jpg'
-];
 
-  constructor() { }
+
+  constructor(private unitService: UnitsService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
+    const params = this.activatedRoute.snapshot.params;
+    console.log(params.id);
+    this.unitService.getDetailUnit(+params.id).subscribe(
+      res => {
+        this.items = res;
+        this.unit = this.items;
+        this.images = this.unit.fotoPrincipal;
+        console.log(this.unit);
+      },
+      err => console.log(err)
+
+    );
+  }
+
+  aumentarPos() {
+    if(this.unit.fotoPrincipal.length - 1 !== this.position) {
+      this.position = this.position + 1;
+      console.log(this.position);
+    }
+
+  }
+
+  disminuirPos() {
+    if(this.position > 0) {
+      this.position = this.position - 1;
+    }
   }
 
 }

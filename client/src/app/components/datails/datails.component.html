@@ -1,10 +1,34 @@
 //put the description and carousel images
-<div class="col-md-4">
-  <div class="card text-center">
-    <div class="carousel-item active" *ngFor = "let image of images">
-      <img src="{{image}}" class="d-block w-100" alt="...">
+<div class="carousel slide carousel-fade" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active" >
+      <img src="{{unit.fotoPrincipal[position]}}" class="d-block w-100" alt="...">
     </div>
   </div>
+  <a class="carousel-control-prev"  role="button" (click)="disminuirPos()">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" role="button" (click)="aumentarPos()">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
 </div>
-
+<br><br>
+<div class="col-md-8">
+  <div class="card text-left">
+    <p>
+      <strong>Barrio: </strong> {{unit.barrio}}<br>
+      <strong>Estrato: </strong> {{unit.estrato}}<br>
+      <strong>Area: </strong> {{unit.area}}<br>
+      <strong>Valor Arriendo: </strong> $ {{unit.valorCanon | number}}<br>
+      <strong>Habitaciones: </strong> {{unit.habitaciones}}<br>
+      <strong>Baños: </strong> {{unit.banios}}<br>
+      <strong>Tipo Cocina: </strong> {{unit.tipoCocina}}<br>
+      <strong>Parqueadero: </strong> {{unit.parqueadero}}<br>
+      <strong>Tipo Parqueadero: </strong> {{unit.tipoParqueadero}}<br>
+      <strong>Dirección: </strong> {{unit.direccion}}<br>
+    </p>
+  </div>
+</div>
 

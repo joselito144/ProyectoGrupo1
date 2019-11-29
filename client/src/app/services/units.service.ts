@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Unit } from '../models/Units';
 import { User } from '../models/users';
+import { ConsultUser } from '../models/consultUser';
 
 
 @Injectable({
@@ -38,6 +39,13 @@ username: string;
 
   deleteUnit(id: string) {
     return this.http.delete('http://localhost:3000/leases/' + id);
+  }
+
+  getDetailUnit(idUnit: number) {
+    const unit: ConsultUser = {    
+      id: idUnit
+    };
+    return this.http.post('https://38yt4srl8l.execute-api.us-east-2.amazonaws.com/dev', unit);
   }
 
 
