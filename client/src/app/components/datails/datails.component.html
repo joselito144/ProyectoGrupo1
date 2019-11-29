@@ -1,65 +1,79 @@
-//it still doesn't advance
-<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-          <div class="carousel-item active" *ngFor = "let image of images">
-              <img src="{{image}}" class="d-block w-100" alt="First slide">
-            </div>
-        <img src={{image}} class="d-block w-100" alt="First slide">
-      </div>
+<div id="button-container" class="col-md-8">
+  <span>
+      <button (click)="disminuirPos()"><i class="far fa-arrow-to-left"></i></button>
 
-      <div class="carousel-item">
-          <div class="carousel-item active" *ngFor = "let image of images">
-              <img src="{{image}}" class="d-block w-100" alt="Second slide">
-            </div>
-        <img src={{image}} class="d-block w-100" alt="Second slide">
-      </div>
+          <img src = {{images[position]}} class="img-fluid">
 
-      <div class="carousel-item">
-          <div class="carousel-item active" *ngFor = "let image of images">
-              <img src="{{image}}" class="d-block w-100" alt="Third slide">
-            </div>
-        <img src={{image}} class="d-block w-100" alt="Third slide">
-      </div>
-    </div>
-
-    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    
-    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
-  </div>
-<div class="col-md-4">
-  <div class="card text-center">
-    <div class="carousel-item active" *ngFor = "let image of images">
-      <img src="{{image}}" class="d-block w-100" alt="...">
-    </div>
-  </div>
+      <button (click)="aumentarPos()"><i class="far fa-arrow-to-right"></i></button>
+  </span>
 </div>
+<div>
+  <span>
+      <div *ngFor = "let image of images">  
+          <img src="image" class="img-thumbnail"> 
+        </div>
+  </span>
+
+</div>
+<div>
+    <a role="button" (click)="disminuirPos()">
+      <span class="carousel-control-prev-icon" aria-hidden="false"></span>
+    </a>
+    <a class="carousel-control-next" role="button" (click)="aumentarPos()">
+      <span class="carousel-control-next-icon" aria-hidden="false"></span>
+    </a>
+</div>
+
+
 <br><br>
-<div class="col-md-8">
-  <div class="card text-left">
-    <p>
-      <strong>Barrio: </strong> {{unit.barrio}}<br>
-      <strong>Estrato: </strong> {{unit.estrato}}<br>
-      <strong>Area: </strong> {{unit.area}}<br>
-      <strong>Valor Arriendo: </strong> $ {{unit.valorCanon | number}}<br>
-      <strong>Habitaciones: </strong> {{unit.habitaciones}}<br>
-      <strong>Baños: </strong> {{unit.banios}}<br>
-      <strong>Tipo Cocina: </strong> {{unit.tipoCocina}}<br>
-      <strong>Parqueadero: </strong> {{unit.parqueadero}}<br>
-      <strong>Tipo Parqueadero: </strong> {{unit.tipoParqueadero}}<br>
-      <strong>Dirección: </strong> {{unit.direccion}}<br>
-    </p>
-  </div>
+
+<div class="table">
+  <thead>
+    <th scope="colgroup" colspan="2" class="text-center">
+      Ficha Técnica
+    </th>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Barrio</th>
+      <td>{{ unit.barrio }}</td>
+    </tr>
+    <tr>
+      <th>Estrato</th>
+      <td>{{unit.estrato}}</td>
+    </tr>
+    <tr>
+      <th>Area</th>
+      <td>{{unit.area}} m<sup>2</sup></td>
+    </tr>
+    <tr>
+      <th>Valor Arriendo</th>
+      <td>$ {{unit.valorCanon | number}}</td>
+    </tr>
+    <tr>
+      <th>Habitaciones</th>
+      <td>{{unit.habitaciones}}</td>
+    </tr>
+    <tr>
+      <th>Baños</th>
+      <td>{{unit.banios}}</td>
+    </tr>
+    <tr>
+      <th>Tipo Cocina</th>
+      <td>{{unit.tipoCocina}}</td>
+    </tr>
+    <tr>
+      <th>Parqueadero</th>
+      <td>{{unit.parqueadero}}</td>
+    </tr>
+    <tr>
+      <th>Tipo Parqueadero</th>
+      <td>{{unit.tipoParqueadero}}</td>
+    </tr>
+    <tr>
+      <th>Dirección</th>
+      <td>{{unit.direccion}}</td>
+    </tr>
+  </tbody>
 </div>
 
