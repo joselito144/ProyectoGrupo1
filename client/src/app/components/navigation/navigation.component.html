@@ -21,13 +21,13 @@
       </li>
       <li class="nav-item">
         <ng-template #loggeado>
-            <div class="dropdown dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true" (click) = "closeSesion()">{{user}}</a>
+            <div class="dropdown">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true" (click)="closeSesion()"><i class="fas fa-user"></i>  {{user}}</a>
               <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 <a class="dropdown-item" href="">Ver mis publicaciones</a>
                 <a class="dropdown-item" href="">Publicar</a>
                 <div class="dropdown-divider">
-                    <a class="dropdown-item" href="">Salir</a>
+                    <a class="dropdown-item" href="#" click="closeSesion()">Salir</a>
                 </div>
               </div>
             </div>
