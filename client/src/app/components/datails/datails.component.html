@@ -1,33 +1,4 @@
-<div id="button-container" class="col-md-8">
-  <span>
-      <button (click)="disminuirPos()"><i class="far fa-arrow-to-left"></i></button>
-
-          <img src = {{images[position]}} class="img-fluid">
-
-      <button (click)="aumentarPos()"><i class="far fa-arrow-to-right"></i></button>
-  </span>
-</div>
-<div>
-  <span>
-      <div *ngFor = "let image of images">  
-          <img src="image" class="img-thumbnail"> 
-        </div>
-  </span>
-
-</div>
-<div>
-    <a role="button" (click)="disminuirPos()">
-      <span class="carousel-control-prev-icon" aria-hidden="false"></span>
-    </a>
-    <a class="carousel-control-next" role="button" (click)="aumentarPos()">
-      <span class="carousel-control-next-icon" aria-hidden="false"></span>
-    </a>
-</div>
-
-
-<br><br>
-
-<div class="table">
+<div class="table col-md-4 offset-md-2">
   <thead>
     <th scope="colgroup" colspan="2" class="text-center">
       Ficha Técnica
@@ -76,4 +47,25 @@
     </tr>
   </tbody>
 </div>
+
+<div class="col-md-4">
+
+
+      <img src = {{images[position]}} class="mainPicture">
+      <a role="button" (click)="disminuirPos()"><i class="fas fa-angle-left"></i></a>
+      <a role="button" (click)="aumentarPos()"><i class="fas fa-angle-right"></i></a>
+
+      <div *ngFor="let image of unit.fotoPrincipal">
+        <span>
+            <img src = " {{image}}" class = "thumbPicture">
+        </span>
+
+        
+      </div>
+        
+</div>
+
+
+
+
 

@@ -1,5 +1,5 @@
 //Angular Core 
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 import { UnitsService } from '../../services/units.service';
 import { Unit } from '../../models/units';
 import { Router, ActivatedRoute } from '@angular/router';
@@ -12,6 +12,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 //Entering images in a String[]
 export class DatailsComponent implements OnInit {
+  @HostBinding('class') clases = 'row';
   private position: number = 0;
   private images: string[];
   private items: any;
