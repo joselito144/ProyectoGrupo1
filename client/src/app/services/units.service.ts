@@ -34,7 +34,7 @@ username: string;
   validateUser(user: User) {
     console.log(user);
     this.username = user.username;
-    return this.http.post('http://localhost:3000/users/', user );
+    return this.http.post('https://yibzn6r80a.execute-api.us-east-2.amazonaws.com/dev', user );
   }
 
   deleteUnit(id: string) {
