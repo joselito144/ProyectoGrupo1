@@ -48,13 +48,25 @@
   </tbody>
 </div>
 
-<div class="col-md-6 offset-md-1 text-center">
+<div class="col-md-6 text-center">
   <br><br>
-  <a role="button" (click)="disminuirPos()" class="float-left"><i class="fas fa-angle-left">Anterior</i></a>
-  <a role="button" (click)="aumentarPos()" class="float-right">Siguiente<i class="fas fa-angle-right"></i></a>
-  <br><br>
+  <div class="container">
+    <div class="row justify-content-between">
+      <button  (click)="disminuirPos()" class="btn float-left"><i class="fas fa-angle-left"></i></button>
+      <p class="text-center">{{position + 1}}/{{images.length}}</p>
+      <button  (click)="aumentarPos()" class="btn float-right"><i class="fas fa-angle-right"></i></button>    
+    </div>
+  </div>
+<br><br>
   <img src = {{images[position]}} class="mainPicture">
   <br>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div *ngFor="let image of images">
+        <img src="{{image}}" class="thumbPicture">
+      </div>
+    </div>
+  </div>
 
 </div>
 
