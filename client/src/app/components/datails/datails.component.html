@@ -1,4 +1,4 @@
-<div class="table col-md-4 offset-md-2">
+<div class="table col-md-4 offset-md-1">
   <thead>
     <th scope="colgroup" colspan="2" class="text-center">
       Ficha Técnica
@@ -48,21 +48,14 @@
   </tbody>
 </div>
 
-<div class="col-md-4">
+<div class="col-md-6 offset-md-1 text-center">
+  <br><br>
+  <a role="button" (click)="disminuirPos()" class="float-left"><i class="fas fa-angle-left">Anterior</i></a>
+  <a role="button" (click)="aumentarPos()" class="float-right">Siguiente<i class="fas fa-angle-right"></i></a>
+  <br><br>
+  <img src = {{images[position]}} class="mainPicture">
+  <br>
 
-
-      <img src = {{images[position]}} class="mainPicture">
-      <a role="button" (click)="disminuirPos()"><i class="fas fa-angle-left"></i></a>
-      <a role="button" (click)="aumentarPos()"><i class="fas fa-angle-right"></i></a>
-
-      <div *ngFor="let image of unit.fotoPrincipal">
-        <span>
-            <img src = " {{image}}" class = "thumbPicture">
-        </span>
-
-        
-      </div>
-        
 </div>
 
 
