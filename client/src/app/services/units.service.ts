@@ -31,6 +31,7 @@ username: string;
     return this.http.post('https://itbbqjsso4.execute-api.us-east-2.amazonaws.com/Produccion',unit);
   }
 
+  //validation from AWS API
   validateUser(user: User) {
     console.log(user);
     this.username = user.username;
