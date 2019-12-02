@@ -10,28 +10,15 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/units"><i class="fas fa-search"></i> Buscar</a>
-      </li>
       <li *ngIf="user" class="nav-item">
-        <a class="nav-link" routerLink="/units/add"><i class="fas fa-plus-square"></i> Publicar</a>
+        <p>{{ user }}</p>
+        <a class="nav-link" routerLink="/units/add"><i class="fas fa-plus-square"></i> Nueva Publicación</a>
+        <a class="nav-link" routerLink="/units/mine"><i class="fas fa-list-ul"></i> Mis Publicaciones</a>
+        <a class="nav-link" href="/units"><i class="fas fa-search"></i> Buscar</a>
+        <a class="nav-link" href="/units" (click) = "closeSesion()"><i class="fas fa-door-open"></i> Cerrar Sesión</a>
       </li>
       <li class="nav-item">
         <a *ngIf="!user else loggeado" class="nav-link" href="/login"><i class="fas fa-user"></i> Login</a>
-      </li>
-      <li class="nav-item">
-        <ng-template #loggeado>
-            <div class="dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true" (click)="closeSesion()"><i class="fas fa-user"></i>  {{user}}</a>
-              <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <a class="dropdown-item" href="">Ver mis publicaciones</a>
-                <a class="dropdown-item" href="">Publicar</a>
-                <div class="dropdown-divider">
-                    <a class="dropdown-item" href="#" click="closeSesion()">Salir</a>
-                </div>
-              </div>
-            </div>
-        </ng-template>
       </li>
     </ul>
   </div>

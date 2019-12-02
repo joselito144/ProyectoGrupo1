@@ -2,7 +2,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { UnitsService } from '../../services/units.service';
 import { Unit } from '../../models/units';
-import { Router, ActivatedRoute } from '@angular/router';
+import {  ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-datails',

@@ -9,12 +9,7 @@
                     <strong> Ubicación: </strong>{{unit.barrio}} <br>
                     Valor: $ {{unit.valorCanon | number}} <br>
                 </p>
-            </div>
-            <div *ngIf = "unit.user == this.user">
-                <button class="btn btn-danger" (click)="deleteUnit(unit.id)">
-                    <i class="far fa-trash-alt"></i>
-                </button>
-            </div>            
+            </div>         
         </div>
         <a routerLink="/details/{{unit.id}}">
             <img src="{{unit.fotoPrincipal[0]}}" class="card-img-top">

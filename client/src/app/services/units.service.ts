@@ -45,9 +45,18 @@ username: string;
 
   getDetailUnit(idUnit: number) {
     const unit: ConsultUser = {
-      id: idUnit
+      id: idUnit,
+      user: ''
     };
     return this.http.post('https://38yt4srl8l.execute-api.us-east-2.amazonaws.com/dev', unit);
+  }
+
+  getMyUnits(username: string) {
+    const unit: ConsultUser = {
+      id: null,
+      user: username
+    };
+    return this.http.post('https://d5jf3pydl3.execute-api.us-east-2.amazonaws.com/dev', unit);
   }
 
 

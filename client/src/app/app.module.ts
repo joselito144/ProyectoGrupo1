@@ -10,6 +10,8 @@ import { UnitsFormComponent } from './components/units-form/units-form.component
 import { UnitsService} from './services/units.service';
 import { DatailsComponent } from './components/datails/datails.component';
 import { LoginComponent } from './components/login/login.component';
+import { MyUnitsComponent } from './components/my-units/my-units.component';
+import { UpdateUnitComponent } from './components/update-unit/update-unit.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { LoginComponent } from './components/login/login.component';
     UnitsListComponent,
     UnitsFormComponent,
     DatailsComponent,
-    LoginComponent
+    LoginComponent,
+    MyUnitsComponent,
+    UpdateUnitComponent
   ],
   imports: [
     BrowserModule,

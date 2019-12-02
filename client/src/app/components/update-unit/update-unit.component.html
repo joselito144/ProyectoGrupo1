@@ -1,0 +1,109 @@
+<div class="col-md-4 offset-md-1">
+        <div class="card">
+            <div class="card-body">
+                <form>
+                    <div class="form-group">
+                        <textarea name ="address" placeholder="Dirección" [(ngModel)] = "unit.direccion" autofocus class="form-control"></textarea>
+                    </div>
+                    <div class = "form-group">
+                        <label >Barrio</label>
+                        <select name="neigs" class="form-control" [(ngModel)] = "unit.barrio" >
+                            <option value="Aranjuez" class="form-control">Aranjuez</option> 
+                            <option value="Belén" class="form-control">Belén</option> 
+                            <option value="Buenos Aires" class="form-control">Buenos Aires</option> 
+                            <option value="Castilla" class="form-control">Castilla</option> 
+                            <option value="Doce de Octubre" class="form-control">Doce de Octubre</option> 
+                            <option value="El Poblado" class="form-control">El Poblado</option> 
+                            <option value="Estadio" class="form-control">Estadio</option> 
+                            <option value="Guayabal" class="form-control">Guayabal</option> 
+                            <option value="La América" class="form-control">La América</option> 
+                            <option value="La Candelaria" class="form-control">La Candelaria</option> 
+                            <option value="Laureles" class="form-control">Laureles</option> 
+                            <option value="Manrique" class="form-control">Manrique</option> 
+                            <option value="Popular" class="form-control">Popular</option> 
+                            <option value="Robledo" class="form-control">Robledo</option> 
+                            <option value="San Javier" class="form-control">San Javier</option> 
+                            <option value="Santa Cruz" class="form-control">Santa Cruz</option> 
+                            <option value="Villa Hermosa" class="form-control">Villa Hermosa</option>                       
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="strate" [(ngModel)] = "unit.estrato" placeholder="Estrato" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="rooms" [(ngModel)] = "unit.habitaciones" placeholder="Habitaciones" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="bathrooms" [(ngModel)] = "unit.banios" placeholder="Baños" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="parking" [(ngModel)] = "unit.parqueadero" placeholder="Parqueadero" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="canonValue" [(ngModel)] = "unit.valorCanon" placeholder="Valor Arriendo" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="areaValue" [(ngModel)] = "unit.area" placeholder="Área (metros cuadrados)" class="form-control">
+                    </div>
+                    <div  class="form-group" >
+                        <input type="url" name="picture0" [(ngModel)] = "unit.fotoPrincipal[0]" placeholder="url fotografia nro. 1" class="col-md-8" >
+                        <button class="float-right" (click)= "addImage()"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div  class="form-group" *ngIf="counts>=2">
+                        <input type="url" name="picture1" [(ngModel)] = "unit.fotoPrincipal[1]" placeholder="url fotografia nro. 2" class="col-md-8" >
+                        <button class="float-right" (click)= "addImage()"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div  class="form-group" *ngIf="counts>=3">
+                        <input type="url" name="picture2" [(ngModel)] = "unit.fotoPrincipal[2]" placeholder="url fotografia nro. 3" class="col-md-8" >
+                        <button class="float-right" (click)= "addImage()"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div  class="form-group" *ngIf="counts>=4">
+                        <input type="url" name="picture3" [(ngModel)] = "unit.fotoPrincipal[3]" placeholder="url fotografia nro. 4" class="col-md-8" >
+                        <button class="float-right" (click)= "addImage()"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <div  class="form-group" *ngIf="counts>=5">
+                        <input type="url" name="picture4" [(ngModel)] = "unit.fotoPrincipal[4]" placeholder="url fotografia nro. 5" class="col-md-8" >
+                        <button class="float-right" (click)= "addImage()"><i class="fas fa-plus"></i></button>
+                    </div>
+                    <button class="btn btn-success btn-block" (click) = "updateUnit()">
+                        Actualizar
+                    </button>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-md-6 text-center">
+            <br><br>
+            <div class="container">
+              <div class="row justify-content-between">
+                <button  (click)="disminuirPos()" class="btn float-left"><i class="fas fa-angle-left"></i></button>
+                <p class="text-center">{{position + 1}}/{{images.length}}</p>
+                <button  (click)="aumentarPos()" class="btn float-right"><i class="fas fa-angle-right"></i></button>    
+              </div>
+            </div>
+          <br><br>
+            <img src = {{images[position]}} class="mainPicture">
+            <br>
+            <div class="container">
+              <div class="row justify-content-center">
+                <div *ngFor="let image of images">
+                  <div *ngIf = "image == images[position], else noSelected">
+                    <img src="{{image}}" class="selectedThumb">
+                  </div>
+                  <ng-template #noSelected>
+                    <img src="{{image}}" class="thumbPicture">
+                  </ng-template>
+                  
+                </div>
+              </div>
+            </div>
+          
+          </div>
+          
+          
+          
+          
+          
+          

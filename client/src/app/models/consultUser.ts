@@ -1,3 +1,4 @@
 export interface ConsultUser {
-    id: number
+    id: number,
+    user: string
 };

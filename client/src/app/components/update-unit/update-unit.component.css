@@ -1,0 +1,14 @@
+.mainPicture {
+    width: 450px;
+ }
+
+ .thumbPicture {
+     width: 80px
+ }
+
+ .selectedThumb {
+    width: 80px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: blue;
+ }
