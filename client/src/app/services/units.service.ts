@@ -12,7 +12,7 @@ export class UnitsService {
 
 username: string;
 
-  constructor(private http: HttpClient) { 
+  constructor(private http: HttpClient) {
   }
 
   getNeighborhoods() {
@@ -28,14 +28,15 @@ username: string;
   }
 
   saveUnit(unit: Unit) {
-    return this.http.post('https://itbbqjsso4.execute-api.us-east-2.amazonaws.com/Produccion',unit);
+    return this.http.post('https://itbbqjsso4.execute-api.us-east-2.amazonaws.com/Produccion', unit);
   }
 
-  //validation from AWS API
+  // validation from AWS API
   validateUser(user: User) {
     console.log(user);
     this.username = user.username;
-    return this.http.post('https://yibzn6r80a.execute-api.us-east-2.amazonaws.com/dev', user );
+    const response = this.http.post('https://yibzn6r80a.execute-api.us-east-2.amazonaws.com/dev', user );
+    return response;
   }
 
   deleteUnit(id: string) {
@@ -43,7 +44,7 @@ username: string;
   }
 
   getDetailUnit(idUnit: number) {
-    const unit: ConsultUser = {    
+    const unit: ConsultUser = {
       id: idUnit
     };
     return this.http.post('https://38yt4srl8l.execute-api.us-east-2.amazonaws.com/dev', unit);

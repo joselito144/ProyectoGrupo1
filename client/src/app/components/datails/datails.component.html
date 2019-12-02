@@ -63,7 +63,13 @@
   <div class="container">
     <div class="row justify-content-center">
       <div *ngFor="let image of images">
-        <img src="{{image}}" class="thumbPicture">
+        <div *ngIf = "image == images[position], else noSelected">
+          <img src="{{image}}" class="selectedThumb">
+        </div>
+        <ng-template #noSelected>
+          <img src="{{image}}" class="thumbPicture">
+        </ng-template>
+        
       </div>
     </div>
   </div>

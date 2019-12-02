@@ -11,12 +11,15 @@ export class UnitsListComponent implements OnInit {
 
   @HostBinding('class') classes = 'row';
 
+  private user: any; 
   units: any = [];
   items: any = [];
 
   constructor(private unitService: UnitsService) { }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('user'));
+    console.log(this.user);
     this.unitService.getUnits().subscribe(
       res => {
         this.items = res;
@@ -25,6 +28,10 @@ export class UnitsListComponent implements OnInit {
       err => console.log(err)
 
     );
+  }
+
+  private deleteUnit(id: number) {
+    console.log('borrando');
   }
 
 }

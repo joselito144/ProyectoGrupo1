@@ -3,5 +3,12 @@
  }
 
  .thumbPicture {
-     width: 80px;
+     width: 80px
+ }
+
+ .selectedThumb {
+    width: 80px;
+    border-width: 3px;
+    border-style: solid;
+    border-color: blue;
  }

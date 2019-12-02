@@ -1,7 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-//Browser
+// Browser
 @Component({
   selector: 'app-navigation',
   templateUrl: './navigation.component.html',
@@ -11,18 +11,19 @@ export class NavigationComponent implements OnInit {
 
   private user: string;
 
-  constructor(private router: Router) { 
-    this.user = JSON.parse(localStorage.getItem('user'));
-    if(this.user) {
-      this.router.navigate(['/']);
-    }
+  constructor(private router: Router) {
+
   }
 
   ngOnInit() {
-
+    this.getUser();
   }
 
-  closeSesion(){
+  public getUser() {
+    this.user = JSON.parse(localStorage.getItem('user'));
+  }
+
+  private closeSesion() {
     localStorage.clear();
   }
 

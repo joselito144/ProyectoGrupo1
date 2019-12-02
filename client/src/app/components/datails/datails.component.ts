@@ -1,4 +1,4 @@
-//Angular Core 
+// Angular Core
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { UnitsService } from '../../services/units.service';
 import { Unit } from '../../models/units';
@@ -10,10 +10,10 @@ import { Router, ActivatedRoute } from '@angular/router';
   styleUrls: ['./datails.component.css']
 })
 
-//Entering images in a String[]
+// Entering images in a String[]
 export class DatailsComponent implements OnInit {
   @HostBinding('class') clases = 'row';
-  private position: number = 0;
+  private position = 0;
   private images: string[];
   private items: any;
   private unit: Unit;
@@ -38,15 +38,14 @@ export class DatailsComponent implements OnInit {
   }
 
   aumentarPos() {
-    if(this.unit.fotoPrincipal.length - 1 !== this.position) {
+    if (this.unit.fotoPrincipal.length - 1 !== this.position) {
       this.position = this.position + 1;
-      console.log(this.position);
     }
 
   }
 
   disminuirPos() {
-    if(this.position > 0) {
+    if (this.position !== 0) {
       this.position = this.position - 1;
     }
   }

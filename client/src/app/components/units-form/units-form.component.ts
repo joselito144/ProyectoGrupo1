@@ -1,7 +1,7 @@
 import { Component, OnInit, HostBinding } from '@angular/core';
 import { UnitsService} from '../../services/units.service';
 import { Unit } from '../../models/Units';
-import { ActivatedRoute, Router } from '@angular/router'
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-units-form',
@@ -17,7 +17,7 @@ export class UnitsFormComponent implements OnInit {
   randid: number;
   activatedRoute: ActivatedRoute;
 
-  private counts: number = 1;
+  private counts = 1;
   private unit: Unit = {
     id: this.generateRowId(4),
     user: JSON.parse(localStorage.getItem('user')),
@@ -49,11 +49,11 @@ export class UnitsFormComponent implements OnInit {
           this.router.navigate(['/units']);
         },
         err => console.log(err)
-      )
+      );
   }
 
-  addImage():void{
-    if(this.counts !== 5) {
+  addImage(): void {
+    if (this.counts !== 5) {
       this.counts = this.counts + 1;
       console.log(this.counts);
     }
