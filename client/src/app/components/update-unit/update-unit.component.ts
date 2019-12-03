@@ -29,6 +29,7 @@ export class UpdateUnitComponent implements OnInit {
         this.items = res;
         this.unit = this.items;
         this.images = this.unit.fotoPrincipal;
+        this.counts = this.images.length;
         console.log(this.unit);
       },
       err => console.log(err)
