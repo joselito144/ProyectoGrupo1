@@ -7,6 +7,7 @@ import { LoginComponent } from '../app/components/login/login.component';
 import { MyUnitsComponent } from './components/my-units/my-units.component';
 import { UpdateUnitComponent } from './components/update-unit/update-unit.component';
 import { RegisterComponent } from './components/register/register.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 const routes: Routes = [
@@ -47,6 +48,10 @@ const routes: Routes = [
   {
     path: 'register',
     component: RegisterComponent
+  },
+  {
+    path: 'units/search',
+    component: SearchComponent
   }
 
 ];

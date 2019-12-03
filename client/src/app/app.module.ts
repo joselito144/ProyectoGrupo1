@@ -13,6 +13,8 @@ import { LoginComponent } from './components/login/login.component';
 import { MyUnitsComponent } from './components/my-units/my-units.component';
 import { UpdateUnitComponent } from './components/update-unit/update-unit.component';
 import { RegisterComponent } from './components/register/register.component';
+import { SearchComponent } from './components/search/search.component';
+import { SetNumberComponent } from './components/set-number/set-number.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { RegisterComponent } from './components/register/register.component';
     LoginComponent,
     MyUnitsComponent,
     UpdateUnitComponent,
-    RegisterComponent
+    RegisterComponent,
+    SearchComponent,
+    SetNumberComponent
   ],
   imports: [
     BrowserModule,
