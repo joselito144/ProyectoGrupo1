@@ -1,4 +1,12 @@
+<div *ngIf = "this.units.length == 0" class="col-md-4 text-center">
+        <a>
+            <p >
+                Aún no tienes publicaciones...
+            </p>
+        </a>
+    </div>
 <div class="col-md-4" *ngFor = "let unit of units">
+
         <div class="card text-center">
             <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
                 <div>

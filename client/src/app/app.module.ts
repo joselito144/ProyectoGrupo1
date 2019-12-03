@@ -12,6 +12,7 @@ import { DatailsComponent } from './components/datails/datails.component';
 import { LoginComponent } from './components/login/login.component';
 import { MyUnitsComponent } from './components/my-units/my-units.component';
 import { UpdateUnitComponent } from './components/update-unit/update-unit.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UpdateUnitComponent } from './components/update-unit/update-unit.compon
     DatailsComponent,
     LoginComponent,
     MyUnitsComponent,
-    UpdateUnitComponent
+    UpdateUnitComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

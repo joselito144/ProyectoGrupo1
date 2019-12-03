@@ -22,14 +22,19 @@ export class MyUnitsComponent implements OnInit {
       res => {
         this.items = res;
         this.units = this.items.Items;
+        console.log(this.units);
+        console.log(this.units.length);
       },
       err => console.log(err)
-
     );
   }
 
   private deleteUnit(id: number) {
     console.log('borrando');
+    this.unitService.deleteUnit(id).subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    );
   }
 
   private updateUnit(id: number) {

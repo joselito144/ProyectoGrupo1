@@ -1,0 +1,43 @@
+<div class="container">
+        <div class="row">
+            <div class="col-md-5 mx-auto">
+            <div id="first">
+                <div class="myform form ">
+                     <div class="logo mb-3">
+                         <div class="col-md-12 text-center">
+                            <p><strong>Registro de Usuario</strong></p>
+                         </div>
+                    </div>
+                    <div>
+                        <p>
+                            <b>¿Por qué Registrarse?</b><br><br>
+                            Al contar con tu usuario en Arrendamiento Pocholo podrás ver la información
+                            completa de las publicaciones, contactar a quienes han publicado, pero sobre todo
+                            mostrarte en una amplia comunidad que ofrece y encuentra lugares para vivir.
+                        </p>
+                    </div>
+                   <form  name="Inicio de Sesión">
+                           <div class="form-group">
+                              <label>Usuario</label>
+                              <input type="text" name="user"  [(ngModel)] = "user.username" class="form-control" id="user" #nUser>
+                           </div>
+                           <div class="form-group">
+                              <label>Digite la contraseña</label>
+                              <input type="password" name="password" [(ngModel)] = "user.password" id="nPass"  class="form-control" #nPassword>
+                           </div>
+                           <div class="form-group">
+                                <label>Confirme la contraseña</label>
+                                <input type="password" name="passwordConfirm"  id="nPassC"  class="form-control" #nPasswordConfirm>
+                             </div>
+                           <div class="col-md-12 text-center ">
+                              <button  (click)="registerUser(nUser, nPassword, nPasswordConfirm)"class="btn btn-block btn-success">Registrar </button>
+                           </div>
+                           <br>
+                           <div>
+                              <p>{{ mensaje }}</p>
+                           </div>
+    
+                        </form>
+                      </div>
+                </div>
+            </div>

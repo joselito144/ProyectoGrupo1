@@ -33,14 +33,15 @@ username: string;
 
   // validation from AWS API
   validateUser(user: User) {
-    console.log(user);
-    this.username = user.username;
-    const response = this.http.post('https://yibzn6r80a.execute-api.us-east-2.amazonaws.com/dev', user );
-    return response;
+    return this.http.post('https://yibzn6r80a.execute-api.us-east-2.amazonaws.com/dev', user );
   }
 
-  deleteUnit(id: string) {
-    return this.http.delete('http://localhost:3000/leases/' + id);
+  deleteUnit(idUnit: number) {
+    const unit: ConsultUser = {
+      id: idUnit,
+      user: ''
+    };
+    return this.http.post('https://u9587qfrx7.execute-api.us-east-2.amazonaws.com/dev', unit);
   }
 
   getDetailUnit(idUnit: number) {
@@ -58,6 +59,11 @@ username: string;
     };
     return this.http.post('https://d5jf3pydl3.execute-api.us-east-2.amazonaws.com/dev', unit);
   }
+
+  createUser(user: User) {
+    return this.http.post('https://833dme4pvh.execute-api.us-east-2.amazonaws.com/dev', user);
+  }
+
 
 
 }

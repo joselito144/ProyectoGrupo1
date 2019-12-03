@@ -30,11 +30,11 @@ export class LoginComponent implements OnInit {
   }
 
   // Exception capture of empty fields
-  private async iniciarSesion(nUser, nPass) {
+  private iniciarSesion(nUser, nPass) {
     if (nUser.value === '' || nPass.value === '') {
       this.mensaje = 'El usuario y/o la clave no pueden estar vacíos';
     } else {
-      await this.unitsService.validateUser(this.user).subscribe(
+      this.unitsService.validateUser(this.user).subscribe(
          res => {
           this.logged = res;
           if (this.logged) {

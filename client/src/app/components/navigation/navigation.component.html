@@ -1,36 +1,39 @@
 <nav class="navbar navbar-expand-lg ">
     
-  <a class="navbar-brand" href="/">
-    <i class="fas fa-home"></i>
-    ARRENDAMIENTOS POCHOLO
-  </a>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
-      <div *ngIf = "user">
-        <p>
-          Prueba
-        </p>
-      </div>
-      <div *ngIf="user">
-        <li class="nav-item" routerLink="/units/add">
-          <a>
-            <i class="fas fa-plus-square"></i> Nueva Publicación
-          </a>
+    <a class="navbar-brand" href="/">
+      <i class="fas fa-home"></i>
+      ARRENDAMIENTOS POCHOLO
+    </a>
+  
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class= "nav-item active" *ngIf = "user">
+          <a class="nav-link" routerLink="/units/add"><i class="fas fa-plus-square"></i> Nueva Publicación</a>
         </li>
-        <li class="nav-item" routerLink="/units/mine">
-          <a>
-            <li class="nav-item" routerLink="/units"><i class="fas fa-search"></i> Buscar
-          </a><i class="fas fa-list-ul"></i> Mis Publicaciones</li>
-        
-        <li class="nav-item" routerLink="/units" (click) = "closeSesion()"><i class="fas fa-door-open"></i> Cerrar Sesión</li>
-        <p>{{ user }} </p>
-    </ul>
-  </div>
-</nav>
+        <li class="nav-link" *ngIf = "user">
+          <a class="nav-link" routerLink="/units/mine"><i class="fas fa-list-ul"></i> Mis Publicaciones</a>
+        </li>
+        <li class= "nav-item active" *ngIf = "user">
+          <a class="nav-link" routerLink="/units"><i class="fas fa-search"></i> Buscar</a>
+        </li>
+        <li class= "nav-item active" *ngIf = "user">
+          <a class="nav-link" href="/units" (click) = "closeSesion()"><i class="fas fa-door-open"></i> Cerrar Sesión</a>
+        </li>
+        <li class= "nav-item active" *ngIf = "user">
+          <p class="nav-link" ><i class="fas fa-user"></i> {{ user }}</p>
+        </li>
+        <li class="nav-item" *ngIf = "!user">
+          <a class="nav-link" href="/login"><i class="fas fa-user"></i> Iniciar Sesión</a>
+        </li>
+        <li class="nav-item" *ngIf = "!user">
+          <a class="nav-link" href="/register"><i class="fas fa-door-open"></i> Registrarse</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
 
 
 

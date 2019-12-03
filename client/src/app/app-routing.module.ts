@@ -2,10 +2,11 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { UnitsListComponent} from '../app/components/units-list/units-list.component';
 import { DatailsComponent} from '../app/components/datails/datails.component';
-import {UnitsFormComponent } from '../app/components/units-form/units-form.component';
-import { LoginComponent } from '../app/components/login/login.component'
+import { UnitsFormComponent } from '../app/components/units-form/units-form.component';
+import { LoginComponent } from '../app/components/login/login.component';
 import { MyUnitsComponent } from './components/my-units/my-units.component';
 import { UpdateUnitComponent } from './components/update-unit/update-unit.component';
+import { RegisterComponent } from './components/register/register.component';
 
 
 const routes: Routes = [
@@ -42,6 +43,10 @@ const routes: Routes = [
   {
     path: 'units/mine/update/:id',
     component: UpdateUnitComponent
+  },
+  {
+    path: 'register',
+    component: RegisterComponent
   }
 
 ];
