@@ -22,28 +22,30 @@
                 <option value="Villa Hermosa" class="form-control">Villa Hermosa</option>                       
             </select>
         </div>
-        <div class = "form-group col-md-4">
+        <div class = "form-group">
             <p style = "text-align: center">Valor Arriendo</p>
-            <input type="text" id = "canonValueFrom" placeholder="Desde">
-            <input type = "text" id = "canonValueP" placeholder="Hasta">
+            <input class = "typeNumber" type="text" id = "canonValueFrom" placeholder="Desde" #valueFrom>
+            <input class = "typeNumber" type = "text" id = "canonValueP" placeholder="Hasta" #valueUntil>
+        </div>
+        <div class = "form-group">
+            <p style = "text-align: center">Alcobas</p>
+            <input type = "number" #rooms> 
+        </div>
+        <div class = "form-group">
+            <p style = "text-align: center" >Baños</p>
+            <input type = "number" #baths>
+        </div>
+        <div class = "form-group" >
+            <p style = "text-align: center">Parqueaderos</p>
+            <input type = "number" #parking>
         </div>
     </div>
-</div>
-<div class="container">
     <div class="row justify-content-center">
-        <div class = "form-group">
-            <app-set-number title="Alcobas"></app-set-number>
-        </div>
-        <div class = "form-group">
-            <app-set-number title="Baños"></app-set-number>
-        </div>
-        <div class = "form-group">
-            <app-set-number title="Parqueaderos"></app-set-number>
-        </div>
-        <div class = "form-group">
-            <app-set-number title="Estrato"></app-set-number>
-        </div>
-        <button class = "btn btn-success">Buscar</button>
+        <button class = "btn btn-success" (click) = "searchUnits(valueFrom, valueUntil, rooms, baths, parking)">Buscar</button>
+    </div>
+    <div>
+        {{ mensaje }}
     </div>
 </div>
+
 
