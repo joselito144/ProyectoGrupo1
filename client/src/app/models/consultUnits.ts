@@ -2,5 +2,7 @@ export interface ConsultUnit {
     Sector: string,
     arriendoDesde: number,
     arriendoHasta: number,
-    habitaciones: number
+    habitaciones: number,
+    banios: number,
+    parqueaderos
 };
