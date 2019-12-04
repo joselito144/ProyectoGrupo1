@@ -23,7 +23,6 @@ export class UpdateUnitComponent implements OnInit {
   ngOnInit() {
 
     const params = this.activatedRoute.snapshot.params;
-    console.log(params.id);
     this.unitService.getDetailUnit(+params.id).subscribe(
       res => {
         this.items = res;
@@ -58,6 +57,7 @@ export class UpdateUnitComponent implements OnInit {
   }
 
   private updateUnit() {
+    this.unit.valorCanon = +this.unit.valorCanon;
     console.log(this.unit);
     this.unitService.saveUnit(this.unit)
       .subscribe(

@@ -1,5 +1,5 @@
 export interface ConsultUnit {
-    Sector: string,
+    sector: string,
     arriendoDesde?: number,
     arriendoHasta?: number,
     habitaciones: number,

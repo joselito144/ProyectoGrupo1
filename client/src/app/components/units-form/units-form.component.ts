@@ -16,7 +16,7 @@ export class UnitsFormComponent implements OnInit {
   ts: number;
   randid: number;
   activatedRoute: ActivatedRoute;
-
+  private canon = '';
   private counts = 1;
   private unit: Unit = {
     id: this.generateRowId(4),
@@ -41,6 +41,7 @@ export class UnitsFormComponent implements OnInit {
   }
 
   saveNewUnit() {
+    this.unit.valorCanon = +this.canon;
     console.log(this.unit);
     this.unitsService.saveUnit(this.unit)
       .subscribe(

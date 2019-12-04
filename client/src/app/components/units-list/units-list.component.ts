@@ -11,7 +11,7 @@ export class UnitsListComponent implements OnInit {
 
   @HostBinding('class') classes = 'row';
 
-  private user: any; 
+  private user: any;
   units: any = [];
   items: any = [];
 

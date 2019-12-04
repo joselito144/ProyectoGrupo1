@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Unit } from '../models/Units';
 import { User } from '../models/users';
 import { ConsultUser } from '../models/consultUser';
+import { ConsultUnit } from '../models/consultUnits';
 
 
 @Injectable({
@@ -62,6 +63,10 @@ username: string;
 
   createUser(user: User) {
     return this.http.post('https://833dme4pvh.execute-api.us-east-2.amazonaws.com/dev', user);
+  }
+
+  searchUnits(consult: ConsultUnit) {
+    return this.http.post('https://97b27f6yt1.execute-api.us-east-2.amazonaws.com/dev', consult);
   }
 
 
