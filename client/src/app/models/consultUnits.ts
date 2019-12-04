@@ -4,5 +4,5 @@ export interface ConsultUnit {
     arriendoHasta: number,
     habitaciones: number,
     banios: number,
-    parqueaderos
+    parqueaderos: number
 };

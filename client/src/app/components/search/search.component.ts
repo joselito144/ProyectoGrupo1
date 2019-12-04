@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ConsultUnit } from '../../models/consultUnits';
 
 @Component({
   selector: 'app-search',
@@ -6,6 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  private consultUnit: ConsultUnit = {
+    Sector: '',
+    arriendoDesde: 0,
+    arriendoHasta: 1,
+    habitaciones: 1,
+    banios: 1,
+    parqueaderos: 0
+  };
   private mensaje: string;
   constructor() { }
 
@@ -13,11 +22,6 @@ export class SearchComponent implements OnInit {
   }
 
   private searchUnits(valueFrom, valueUntil, rooms, baths, parking) {
-    console.log(valueFrom.value);
-    console.log(valueUntil.value);
-    console.log(rooms.value);
-    console.log(baths.value);
-    console.log(parking.value);
     if ( valueFrom.value === '' || valueUntil.value === '' || rooms.value === null || baths.value === null || parking.value === null) {
       this.mensaje = 'Debe diligenciar todos los campos';
     } else {
