@@ -9,8 +9,8 @@ import { ConsultUnit } from '../../models/consultUnits';
 export class SearchComponent implements OnInit {
   private consultUnit: ConsultUnit = {
     Sector: '',
-    arriendoDesde: 0,
-    arriendoHasta: 1,
+    arriendoDesde: null,
+    arriendoHasta: null,
     habitaciones: 1,
     banios: 1,
     parqueaderos: 0
@@ -21,16 +21,9 @@ export class SearchComponent implements OnInit {
   ngOnInit() {
   }
 
-  private searchUnits(valueFrom, valueUntil, rooms, baths, parking) {
-    if ( valueFrom.value === '' || valueUntil.value === '' || rooms.value === null || baths.value === null || parking.value === null) {
-      this.mensaje = 'Debe diligenciar todos los campos';
-    } else {
-      if ( valueFrom.value > valueUntil.value) {
-        this.mensaje  = 'El valor de arriendo desde debe ser menor que el hasta';
-      } else {
-        this.mensaje = 'Buscando Resultados';
-      }
-    }
+  private searchUnits() {
+    console.log(this.consultUnit);
   }
 
 }
+
