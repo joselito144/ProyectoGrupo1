@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 })
 export class MyUnitsComponent implements OnInit {
   @HostBinding('class') classes = 'row';
-
+  private mensaje = '';
   private activeUser: string;
   units: any = [];
   items: any = [];
@@ -17,23 +17,19 @@ export class MyUnitsComponent implements OnInit {
   constructor(private unitService: UnitsService, private router: Router) { }
 
   ngOnInit() {
-    this.activeUser = JSON.parse(localStorage.getItem('user'));
-    this.unitService.getMyUnits(this.activeUser).subscribe(
-      res => {
-        this.items = res;
-        this.units = this.items.Items;
-        console.log(this.units);
-        console.log(this.units.length);
-      },
-      err => console.log(err)
-    );
+    this.getUnits();
   }
 
   private deleteUnit(id: number) {
     console.log('borrando');
     this.unitService.deleteUnit(id).subscribe(
-      res => console.log(res),
-      err => console.log(err)
+      res => {
+        console.log(res);
+        this.getUnits();
+      },
+      err => {
+        this.getUnits();
+      }
     );
   }
 
@@ -42,4 +38,20 @@ export class MyUnitsComponent implements OnInit {
     this.router.navigate(['units/mine/update/' + id]);
   }
 
+  private getUnits() {
+    this.activeUser = JSON.parse(localStorage.getItem('user'));
+    this.unitService.getMyUnits(this.activeUser).subscribe(
+      res => {
+        this.items = res;
+        this.units = this.items.Items;
+        console.log(this.units);
+        if (this.units.length === 0) {
+          this.mensaje = 'Aún no tienes publicaciones';
+        }
+      },
+      err => console.log(err)
+    );
+  }
+
 }
+

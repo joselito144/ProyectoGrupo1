@@ -15,6 +15,7 @@ import { UpdateUnitComponent } from './components/update-unit/update-unit.compon
 import { RegisterComponent } from './components/register/register.component';
 import { SearchComponent } from './components/search/search.component';
 import { SetNumberComponent } from './components/set-number/set-number.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SetNumberComponent } from './components/set-number/set-number.component
     UpdateUnitComponent,
     RegisterComponent,
     SearchComponent,
-    SetNumberComponent
+    SetNumberComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

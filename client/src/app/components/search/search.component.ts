@@ -10,16 +10,18 @@ import {UnitsService } from '../../services/units.service'
 export class SearchComponent implements OnInit {
 
   @HostBinding('class') classes = 'row';
+  private canonFrom = null;
+  private canonUntil = null;
   private mensaje = '';
   private units: any = [];
   private items: any = [];
   private consultUnit: ConsultUnit = {
     sector: '',
-    arriendoDesde: null,
-    arriendoHasta: null,
+    arriendoDesde: 0,
+    arriendoHasta: 0,
     habitaciones: 1,
     banios: 1,
-    parqueaderos: 0
+    parqueadero: 0
   };
   constructor(private unitService: UnitsService) { }
 
@@ -28,18 +30,18 @@ export class SearchComponent implements OnInit {
 
   private searchUnits() {
     this.mensaje = '';
-    this.consultUnit.arriendoDesde = +this.consultUnit.arriendoDesde;
-    this.consultUnit.arriendoHasta = +this.consultUnit.arriendoHasta;
-    console.log(this.consultUnit);
+    this.consultUnit.arriendoDesde = +this.canonFrom;
+    this.consultUnit.arriendoHasta = +this.canonUntil;
     if (this.consultUnit.sector === '') {
-      this.mensaje = 'Debe especificar el sector de búsqueda';
+      this.consultUnit.sector = 'todos';
     } else {
-      if (this.consultUnit.arriendoDesde === 0) {
+      if (this.canonFrom === null) {
         this.consultUnit.arriendoDesde = 0;
       }
-      if (this.consultUnit.arriendoHasta === 0) {
+      if (this.canonUntil === null) {
         this.consultUnit.arriendoHasta = 100000000;
       }
+      console.log(this.consultUnit);
       this.unitService.searchUnits(this.consultUnit).subscribe(
         res => {
           this.items = res;
@@ -48,8 +50,10 @@ export class SearchComponent implements OnInit {
             this.mensaje = 'No hay resultados para tu búsqueda';
           }
         },
-        err => console.log(err)
-  
+        err => {
+          console.log(err)
+          this.mensaje = 'Ha ocurrido un error al consultar';
+        }
       );
     }
 

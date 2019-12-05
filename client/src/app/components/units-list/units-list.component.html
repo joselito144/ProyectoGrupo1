@@ -1,3 +1,28 @@
+<div class="container" *ngIf="!user">
+    <br>
+    <div class="text-center">
+        <img src="https://1.bp.blogspot.com/-Vju3PlmCJzU/Vw5W7SE2j8I/AAAAAAAAAkU/8UbVxJH2Rek009-B7p2o_XjEAx_ZaqoEACLcB/s640/decoracion-sala-living-black-and-white-blanco-negro-estilo-moderno-dise%25C3%25B1o-tendencias-hogar-color-tips-hermoso-5.jpg" class="mainPicture">
+        <br><br>
+    </div>
+</div>
+<div class="container" *ngIf="!user">
+    <p style="text-align:center">
+        Bienvenido a Arrendamientos Pocholo
+    </p>
+    <p style="text-align: center" *ngIf="!user">
+        Registrate con nostros
+    </p>
+</div>
+<div>
+    <hr>
+</div>
+<br>
+<div class="container">
+    <h1 style="text-align:center">
+        Estas propiedades te pueden interesar
+    </h1>
+</div>
+
 <div class="col-md-4" *ngFor = "let unit of units">
     <div class="card text-center">
         <div class="card-header bg-dark text-white d-flex justify-content-between align-items-center">
