@@ -8,7 +8,6 @@ import {UnitsService } from '../../services/units.service'
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
-
   @HostBinding('class') classes = 'row';
   private canonFrom = null;
   private canonUntil = null;
@@ -38,17 +37,18 @@ export class SearchComponent implements OnInit {
     } else {
       if (this.consultUnit.sector === '') {
         this.consultUnit.sector = 'todos';
-      } else {
-        if (this.canonFrom === '') {
-          this.consultUnit.arriendoDesde = 0;
-        }
-        console.log(this.canonUntil);
-        if (this.canonUntil === '') {
-          this.consultUnit.arriendoHasta = 100000000;
-        }
-        console.log(this.consultUnit.arriendoDesde);
-        console.log(this.consultUnit.arriendoHasta);
-        if (this.consultUnit.arriendoDesde > this.consultUnit.arriendoHasta) {
+      }
+      console.log(this.consultUnit.arriendoDesde);
+      if (this.consultUnit.arriendoDesde === 0) {
+        this.consultUnit.arriendoDesde = 0;
+      }
+      console.log(this.consultUnit.arriendoHasta);
+      if (this.consultUnit.arriendoHasta === 0) {
+        this.consultUnit.arriendoHasta = 100000000;
+      }
+      console.log(this.canonFrom);
+      console.log(this.canonUntil);
+      if (this.consultUnit.arriendoDesde > this.consultUnit.arriendoHasta) {
           this.mensaje = 'El rango del arriendo debe ir de un número menor a uno mayor';
         } else {
           console.log(this.consultUnit);
@@ -68,7 +68,6 @@ export class SearchComponent implements OnInit {
             }
           );
         }
-      }
     }
 
   }
