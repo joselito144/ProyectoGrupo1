@@ -30,19 +30,19 @@
                     </div>
                     <div class="form-group">
                         <label>Estrato</label>
-                        <input type="number" name="strate" [(ngModel)] = "unit.estrato" placeholder="Estrato" class="form-control">
+                        <input type="number" name="strate" [(ngModel)] = "unit.estrato" placeholder="Estrato" class="form-control" min="1" max="6">
                     </div>
                     <div class="form-group">
                         <label>Habitaciones</label>
-                        <input type="number" name="rooms" [(ngModel)] = "unit.habitaciones" placeholder="Habitaciones" class="form-control">
+                        <input type="number" name="rooms" [(ngModel)] = "unit.habitaciones" placeholder="Habitaciones" class="form-control" min="1" max="10">
                     </div>
                     <div class="form-group">
                         <label>Baños</label>
-                        <input type="number" name="bathrooms" [(ngModel)] = "unit.banios" placeholder="Baños" class="form-control">
+                        <input type="number" name="bathrooms" [(ngModel)] = "unit.banios" placeholder="Baños" class="form-control" min="1" max="10">
                     </div>
                     <div class="form-group">
                         <label>Parqueaderos</label>
-                        <input type="number" name="parking" [(ngModel)] = "unit.parqueadero" placeholder="Parqueadero" class="form-control">
+                        <input type="number" name="parking" [(ngModel)] = "unit.parqueadero" placeholder="Parqueadero" class="form-control" min="0" max="5">
                     </div>
                     <div class="form-group">
                         <label>Valor del Arriendo</label>
@@ -50,7 +50,7 @@
                     </div>
                     <div class="form-group">
                         <label>Área del inmueble</label>
-                        <input type="text" name="areaValue" [(ngModel)] = "unit.area" placeholder="Área (metros cuadrados)" class="form-control">
+                        <input type="text" name="areaValue" [(ngModel)] = "unit.area" placeholder="Área (metros cuadrados)" class="form-control" appMaskSinglenumber>
                     </div>
                     <label>Fotografías</label>
                     <button class="float-right" (click)= "addImage()"><i class="fas fa-plus"></i></button>

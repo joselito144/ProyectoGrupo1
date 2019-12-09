@@ -28,22 +28,22 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="number" name="strate" [(ngModel)] = "unit.estrato" placeholder="Estrato" class="form-control" appMaskSinglenumber>
+                    <input type="number" name="strate" [(ngModel)] = "unit.estrato" placeholder="Estrato" class="form-control" min="1" max="6">
                 </div>
                 <div class="form-group">
-                    <input type="number" name="rooms" [(ngModel)] = "unit.habitaciones" placeholder="Habitaciones" class="form-control" appMaskSinglenumber>
+                    <input type="number" name="rooms" [(ngModel)] = "unit.habitaciones" placeholder="Habitaciones" class="form-control" min="1" max="10">
                 </div>
                 <div class="form-group">
-                    <input type="number" name="bathrooms" [(ngModel)] = "unit.banios" placeholder="Baños" class="form-control" appMaskSinglenumber>
+                    <input type="number" name="bathrooms" [(ngModel)] = "unit.banios" placeholder="Baños" class="form-control" min="1" max="10">
                 </div>
                 <div class="form-group">
-                    <input type="number" name="parking" [(ngModel)] = "unit.parqueadero" placeholder="Parqueadero" class="form-control">
+                    <input type="number" name="parking" [(ngModel)] = "unit.parqueadero" placeholder="Parqueadero" class="form-control" min="0" max="10">
                 </div>
                 <div class="form-group">
                     <input type="text" name="canonValue" [(ngModel)] = "canon" placeholder="Valor Arriendo" class="form-control" appMaskNumber>
                 </div>
                 <div class="form-group">
-                    <input type="text" name="areaValue" [(ngModel)] = "unit.area" placeholder="Área (metros cuadrados)" class="form-control">
+                    <input type="text" name="areaValue" [(ngModel)] = "unit.area" placeholder="Área (metros cuadrados)" class="form-control" appMaskSinglenumber min="0" max="400">
                 </div>
                 <label>Fotografías</label>
                 <button class="float-right" (click)= "addImage()"><i class="fas fa-plus"></i></button>

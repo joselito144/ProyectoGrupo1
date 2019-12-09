@@ -3,6 +3,7 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 export const NUMBER_VALUE: any = {
   provide: NG_VALUE_ACCESSOR,
+  // tslint:disable-next-line: no-use-before-declare
   useExisting: forwardRef(() => MaskSinglenumberDirective),
   multi: true
 };
@@ -52,7 +53,7 @@ export class MaskSinglenumberDirective implements OnInit, ControlValueAccessor {
 
   @HostListener('keyup', ['$event']) public keyUpEvet(e: any) {
 
-    const noZero: RegExp = /[1-6]{1}/;
+    const noZero: RegExp = /[1-9]{1}[0-9]*/;
     const val = e.target.value;
     const result: string[] = this.splitData(val);
 
@@ -73,12 +74,12 @@ export class MaskSinglenumberDirective implements OnInit, ControlValueAccessor {
 
 
   public splitData(str: string) {
-    const regex: RegExp = /[1-6]{1}/;
+    const regex: RegExp = /[1-9]{1}[0-9]*/;
     return  str.match(regex);
   }
 
   public clearEndInput(): void {
-    let value = this.element.value.replace('$ ', '');
+    const value = this.element.value.replace('$ ', '');
     if (value.length === 0) {
       this.setInput('');
     } else {

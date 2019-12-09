@@ -29,15 +29,15 @@
         </div>
         <div class = "form-group">
             <p style = "text-align: center">Alcobas</p>
-            <input type = "number" [(ngModel)]="consultUnit.habitaciones" style = "text-align: center" appMaskSinglenumber> 
+            <input type = "number" [(ngModel)]="consultUnit.habitaciones" style = "text-align: center" min="1" max="10"> 
         </div>
         <div class = "form-group">
             <p style = "text-align: center" >Baños</p>
-            <input type = "number" [(ngModel)]="consultUnit.banios" style = "text-align: center" appMaskSinglenumber>
+            <input type = "number" [(ngModel)]="consultUnit.banios" style = "text-align: center" min="1" max="10">
         </div>
         <div class = "form-group" >
             <p style = "text-align: center">Parqueaderos</p>
-            <input type = "number" [(ngModel)]="consultUnit.parqueadero" style = "text-align: center">
+            <input type = "number" [(ngModel)]="consultUnit.parqueadero" style = "text-align: center" min="0" max="5">
         </div>
     </div>
     <div class="row justify-content-center">
