@@ -21,16 +21,19 @@ export class MyUnitsComponent implements OnInit {
   }
 
   private deleteUnit(id: number) {
-    console.log('borrando');
-    this.unitService.deleteUnit(id).subscribe(
-      res => {
-        console.log(res);
-        this.getUnits();
-      },
-      err => {
-        this.getUnits();
-      }
-    );
+    const anwer = confirm('¿Está seguro de eliminar esta publicación?');
+    if (anwer) {
+      console.log('borrando');
+      this.unitService.deleteUnit(id).subscribe(
+        res => {
+          console.log(res);
+          this.getUnits();
+        },
+        err => {
+          this.getUnits();
+        }
+      );
+    }
   }
 
   private updateUnit(id: number) {
