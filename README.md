@@ -5,11 +5,7 @@ Desarrollado por :  José Andrés Suárez Espinal
                     Pablo Murcia
                     Jonathan Hincapie
                     Alejandro Salazar
-                    Mr. Nobody
 
-Servidor API REST:  Desarrollado en Nodejs
-                    La ejecución se realiza de manera local a través del puerto 3000
-                    Para iniciar:
-                    ejecutar en la ruta '/server/build/' los comandos: node index.js
+Servidor API REST:  API GATEWAY de AWS - Que desencadena microservicios de AWS-Lambda para leer y escribir sobre un BD DynamoDB
 
 Aplicación Front:   Desarrollado en Angular version 8
