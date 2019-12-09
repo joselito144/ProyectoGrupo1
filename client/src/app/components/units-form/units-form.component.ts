@@ -41,7 +41,7 @@ export class UnitsFormComponent implements OnInit {
   }
 
   saveNewUnit() {
-    this.unit.valorCanon = +this.canon;
+    this.unit.valorCanon = +this.splitData(this.canon);
     console.log(this.unit);
     this.unitsService.saveUnit(this.unit)
       .subscribe(
@@ -67,6 +67,13 @@ export class UnitsFormComponent implements OnInit {
     this.ts = (this.ts * 64);   // bit-shift << 6
     this.ts = this.ts + shardId;
     return (this.ts * 512) + (this.randid % 512);
+  }
+
+  public splitData(str: string) {
+    str = str.replace('$', '');
+    str = str.replace('.', '');
+    str = str.replace('.', '');
+    return str;
   }
 
 }

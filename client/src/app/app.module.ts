@@ -16,6 +16,7 @@ import { RegisterComponent } from './components/register/register.component';
 import { SearchComponent } from './components/search/search.component';
 import { SetNumberComponent } from './components/set-number/set-number.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { MaskNumberDirective } from './directives/mask-number.directive';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { FooterComponent } from './components/footer/footer.component';
     RegisterComponent,
     SearchComponent,
     SetNumberComponent,
-    FooterComponent
+    FooterComponent,
+    MaskNumberDirective
   ],
   imports: [
     BrowserModule,

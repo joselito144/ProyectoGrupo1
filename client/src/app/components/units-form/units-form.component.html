@@ -40,7 +40,7 @@
                     <input type="number" name="parking" [(ngModel)] = "unit.parqueadero" placeholder="Parqueadero" class="form-control">
                 </div>
                 <div class="form-group">
-                    <input type="text" name="canonValue" [(ngModel)] = "canon" placeholder="Valor Arriendo" class="form-control">
+                    <input type="text" name="canonValue" [(ngModel)] = "canon" placeholder="Valor Arriendo" class="form-control" appMaskNumber>
                 </div>
                 <div class="form-group">
                     <input type="text" name="areaValue" [(ngModel)] = "unit.area" placeholder="Área (metros cuadrados)" class="form-control">

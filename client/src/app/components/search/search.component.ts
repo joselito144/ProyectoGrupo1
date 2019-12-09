@@ -30,8 +30,12 @@ export class SearchComponent implements OnInit {
 
   private searchUnits() {
     this.mensaje = '';
-    this.consultUnit.arriendoDesde = +this.canonFrom;
-    this.consultUnit.arriendoHasta = +this.canonUntil;
+    console.log(this.canonFrom);
+    console.log(this.splitData(this.canonFrom));
+    console.log(this.splitData(this.canonUntil));
+    this.consultUnit.arriendoDesde = +this.splitData(this.canonFrom);
+    this.consultUnit.arriendoHasta = +this.splitData(this.canonUntil);
+    console.log(this.consultUnit);
     if (this.consultUnit.sector === '') {
       this.consultUnit.sector = 'todos';
     } else {
@@ -41,22 +45,32 @@ export class SearchComponent implements OnInit {
       if (this.canonUntil === null) {
         this.consultUnit.arriendoHasta = 100000000;
       }
-      console.log(this.consultUnit);
-      this.unitService.searchUnits(this.consultUnit).subscribe(
-        res => {
-          this.items = res;
-          this.units = this.items.Items;
-          if (this.units.length === 0)  {
-            this.mensaje = 'No hay resultados para tu búsqueda';
+      if (this.consultUnit.arriendoDesde > this.consultUnit.arriendoHasta) {
+        this.mensaje = 'El rango del arriendo debe ir de un número menor a uno mayor';
+      } else {
+        this.unitService.searchUnits(this.consultUnit).subscribe(
+          res => {
+            this.items = res;
+            this.units = this.items.Items;
+            if (this.units.length === 0)  {
+              this.mensaje = 'No hay resultados para tu búsqueda';
+            }
+          },
+          err => {
+            console.log(err),
+            this.mensaje = 'Ha ocurrido un error al consultar';
           }
-        },
-        err => {
-          console.log(err)
-          this.mensaje = 'Ha ocurrido un error al consultar';
-        }
-      );
+        );
+      }
     }
 
+  }
+
+  public splitData(str: string) {
+    str = str.replace('$', '');
+    str = str.replace('.', '');
+    str = str.replace('.', '');
+    return str;
   }
 
 }

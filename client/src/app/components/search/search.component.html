@@ -24,8 +24,8 @@
         </div>
         <div class = "form-group">
             <p style = "text-align: center">Valor Arriendo</p>
-            <input class = "typeNumber" type="text" id = "canonValueFrom" placeholder="Desde" [(ngModel)]="canonFrom">
-            <input class = "typeNumber" type = "text" id = "canonValueP" placeholder="Hasta" [(ngModel)]="canonUntil">
+            <input class = "typeNumber" type="text" id = "canonValueFrom" placeholder="Desde" [(ngModel)]="canonFrom" appMaskNumber>
+            <input class = "typeNumber" type = "text" id = "canonValueP" placeholder="Hasta" [(ngModel)]="canonUntil" appMaskNumber>
         </div>
         <div class = "form-group">
             <p style = "text-align: center">Alcobas</p>
@@ -46,6 +46,9 @@
     <div>
         {{ mensaje }}
     </div>
+</div>
+<div>
+    <br><hr>
 </div>
 <div class="col-md-4" *ngFor = "let unit of units">
     <div class="card text-center">
