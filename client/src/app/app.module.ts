@@ -17,6 +17,7 @@ import { SearchComponent } from './components/search/search.component';
 import { SetNumberComponent } from './components/set-number/set-number.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { MaskNumberDirective } from './directives/mask-number.directive';
+import { MaskSinglenumberDirective } from './directives/mask-singlenumber.directive';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { MaskNumberDirective } from './directives/mask-number.directive';
     SearchComponent,
     SetNumberComponent,
     FooterComponent,
-    MaskNumberDirective
+    MaskNumberDirective,
+    MaskSinglenumberDirective
   ],
   imports: [
     BrowserModule,

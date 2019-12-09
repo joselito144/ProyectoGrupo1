@@ -28,13 +28,13 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <input type="number" name="strate" [(ngModel)] = "unit.estrato" placeholder="Estrato" class="form-control">
+                    <input type="number" name="strate" [(ngModel)] = "unit.estrato" placeholder="Estrato" class="form-control" appMaskSinglenumber>
                 </div>
                 <div class="form-group">
-                    <input type="number" name="rooms" [(ngModel)] = "unit.habitaciones" placeholder="Habitaciones" class="form-control">
+                    <input type="number" name="rooms" [(ngModel)] = "unit.habitaciones" placeholder="Habitaciones" class="form-control" appMaskSinglenumber>
                 </div>
                 <div class="form-group">
-                    <input type="number" name="bathrooms" [(ngModel)] = "unit.banios" placeholder="Baños" class="form-control">
+                    <input type="number" name="bathrooms" [(ngModel)] = "unit.banios" placeholder="Baños" class="form-control" appMaskSinglenumber>
                 </div>
                 <div class="form-group">
                     <input type="number" name="parking" [(ngModel)] = "unit.parqueadero" placeholder="Parqueadero" class="form-control">

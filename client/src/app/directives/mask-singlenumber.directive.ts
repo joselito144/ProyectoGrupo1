@@ -3,15 +3,13 @@ import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
 
 export const NUMBER_VALUE: any = {
   provide: NG_VALUE_ACCESSOR,
-  useExisting: forwardRef(() => MaskNumberDirective),
+  useExisting: forwardRef(() => MaskSinglenumberDirective),
   multi: true
 };
-
 @Directive({
-  selector: '[appMaskNumber]'
+  selector: '[appMaskSinglenumber]'
 })
-export class MaskNumberDirective implements OnInit, ControlValueAccessor  {
-
+export class MaskSinglenumberDirective implements OnInit, ControlValueAccessor {
 
   private readonly element: HTMLInputElement;
   public allow: number[] = [8, 48, 46, 50, 51, 52, 53, 54, 55, 56, 57];
@@ -47,23 +45,14 @@ export class MaskNumberDirective implements OnInit, ControlValueAccessor  {
   }
 
   @HostListener('blur', ['$event']) blurEvent(e: any) {
-    let formateado = '';
-    let contador = 1;
-    for (let i = e.target.value.length; i > 0; i--) {
-      formateado = e.target.value.slice(i - 1, i) + formateado;
-      if (contador % 3 === 0 && i !== 1) {
-        formateado = '.' + formateado;
-      }
-      contador++;
-   }
-    this.setInput(formateado);
+
   }
 
 
 
   @HostListener('keyup', ['$event']) public keyUpEvet(e: any) {
 
-    const noZero: RegExp = /[1-9]{1}[0-9]*/;
+    const noZero: RegExp = /[1-6]{1}/;
     const val = e.target.value;
     const result: string[] = this.splitData(val);
 
@@ -84,7 +73,7 @@ export class MaskNumberDirective implements OnInit, ControlValueAccessor  {
 
 
   public splitData(str: string) {
-    const regex: RegExp = /[1-9]{1}[0-9]*/;
+    const regex: RegExp = /[1-6]{1}/;
     return  str.match(regex);
   }
 
@@ -102,5 +91,6 @@ export class MaskNumberDirective implements OnInit, ControlValueAccessor  {
     this.element.value = value;
     this.element.dispatchEvent(new Event('input'));
   }
+
 
 }

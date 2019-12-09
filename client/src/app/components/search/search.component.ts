@@ -29,7 +29,7 @@ export class SearchComponent implements OnInit {
   }
 
   private searchUnits() {
-    this.mensaje = '';
+    this.mensaje = 'Buscando';
     console.log(this.canonFrom);
     console.log(this.splitData(this.canonFrom));
     console.log(this.splitData(this.canonUntil));
@@ -40,9 +40,11 @@ export class SearchComponent implements OnInit {
       this.consultUnit.sector = 'todos';
     } else {
       if (this.canonFrom === null) {
+        console.log('Paso 1');
         this.consultUnit.arriendoDesde = 0;
       }
       if (this.canonUntil === null) {
+        console.log('Paso 2');
         this.consultUnit.arriendoHasta = 100000000;
       }
       if (this.consultUnit.arriendoDesde > this.consultUnit.arriendoHasta) {
@@ -54,6 +56,8 @@ export class SearchComponent implements OnInit {
             this.units = this.items.Items;
             if (this.units.length === 0)  {
               this.mensaje = 'No hay resultados para tu búsqueda';
+            } else {
+              this.mensaje = 'Resultados para tu búsqueda:';
             }
           },
           err => {
@@ -67,9 +71,12 @@ export class SearchComponent implements OnInit {
   }
 
   public splitData(str: string) {
-    str = str.replace('$', '');
-    str = str.replace('.', '');
-    str = str.replace('.', '');
+    console.log(str);
+    if (str !== null) {
+      str = str.replace('$', '');
+      str = str.replace('.', '');
+      str = str.replace('.', '');
+    }
     return str;
   }
 

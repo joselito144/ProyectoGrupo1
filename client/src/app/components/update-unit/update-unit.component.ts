@@ -57,7 +57,7 @@ export class UpdateUnitComponent implements OnInit {
   }
 
   private updateUnit() {
-    this.unit.valorCanon = +this.unit.valorCanon;
+    this.unit.valorCanon = +this.splitData(this.unit.valorCanon.toString());
     console.log(this.unit);
     this.unitService.saveUnit(this.unit)
       .subscribe(
@@ -67,6 +67,13 @@ export class UpdateUnitComponent implements OnInit {
         },
         err => console.log(err)
       );
+  }
+
+  public splitData(str: string) {
+    str = str.replace('$', '');
+    str = str.replace('.', '');
+    str = str.replace('.', '');
+    return str;
   }
 
 
