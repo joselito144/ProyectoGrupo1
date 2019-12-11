@@ -14,7 +14,7 @@ class UsersControllers {
         const username  = req.body.username;
         const users = await pool.query('SELECT password FROM users where username = \'' + username + "\'");
         console.log(users.rowsAffected[0]);
-        if(users.rowsAffected[0] === 0){
+        if (users.rowsAffected[0] === 0){
             res.json(0);
         }
         else
