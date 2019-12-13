@@ -59,15 +59,16 @@
   </div>
 <br><br>
   <img src = {{images[position]}} class="mainPicture">
-  <br>
   <div class="container">
     <div class="row justify-content-center">
       <div *ngFor="let image of images">
         <div *ngIf = "image == images[position], else noSelected">
           <img src="{{image}}" class="selectedThumb">
+          &nbsp;
         </div>
         <ng-template #noSelected>
           <img src="{{image}}" class="thumbPicture">
+          &nbsp;
         </ng-template>
         
       </div>
