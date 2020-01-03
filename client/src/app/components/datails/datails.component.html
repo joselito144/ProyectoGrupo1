@@ -67,7 +67,7 @@
           &nbsp;
         </div>
         <ng-template #noSelected>
-          <img src="{{image}}" class="thumbPicture">
+          <img src="{{image}}" class="thumbPicture" (click) = selectImage(image)>
           &nbsp;
         </ng-template>
         

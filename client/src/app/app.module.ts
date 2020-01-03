@@ -18,6 +18,8 @@ import { SetNumberComponent } from './components/set-number/set-number.component
 import { FooterComponent } from './components/footer/footer.component';
 import { MaskNumberDirective } from './directives/mask-number.directive';
 import { MaskSinglenumberDirective } from './directives/mask-singlenumber.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSliderModule } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -40,7 +42,9 @@ import { MaskSinglenumberDirective } from './directives/mask-singlenumber.direct
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatSliderModule
   ],
   providers: [
     UnitsService

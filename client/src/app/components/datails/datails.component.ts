@@ -50,4 +50,12 @@ export class DatailsComponent implements OnInit {
     }
   }
 
+  selectImage(image: string) {
+    for (let i = 0; i <= this.images.length; i++) {
+      if (image === this.images[i]) {
+        this.position = i;
+      }
+    }
+  }
+
 }
